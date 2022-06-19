@@ -28,63 +28,141 @@
     <div class="d-flex justify-content-between justify-content-lg-around ">
         <div class="d-flex flex-row p-1">
             <img alt="logo" src="image/logo.jpg" width="60" height="60">
-            <div class="d-flex col ms-2">
+            <div class=" d-flex col">
                 <h1 class="text-principal pt-1"><i>VS</i></h1>
                 <h4 class="text-gray-400 pt-4"><i>Sport.fr</i></h4>
             </div>
+            <div style="height: 40px;" class="bg-principal  d-none d-md-block border rounded  px-3 pt-1 text-white ms-5 mt-3 box-shadow-sm" >Page d'accueil</div>
+
+        </div>
+
+        <div class="d-lg-none d-block pt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </div>
+
+        <div class=" flex-row pt-3 d-none d-lg-flex">
+            <div class="pt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person " viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                </svg>
+            </div>
+            <h6 class="ms-2 pt-2">
+                Espace membre
+            </h6>
+            <div class="ms-5 pt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+            </div>
+            <h6 class="ms-2 pt-2">
+                Notifications
+            </h6>
         </div>
     </div>
 </header>
 
 <section class="bg-image"
-         style="background-image: url('image/fondEcranConnexion.jpg');
-            height: auto; background-position: center;">
+         style="background-image: url('image/fondEcranDeposer.jpg');
+            height: auto; background-position: center left;">
 
-    <section class="ftco-section pt-9 pb-9 ">
+    <section class="ftco-section py-2">
         <div class="container ">
-            <div class="row justify-content-left ">
-                <div class="col-sm-9 col-md-7 col-lg-6 col-xl-4 ">
-                    <div class="wrap ">
-                        <div class="login-wrap bg-white box-shadow-md p-4 p-md-5 con">
+            <div class="row  justify-content-start gap-5">
+                <div class="col-md-8 col-lg-7 col-xl-5  ">
+                    <div class="wrap  py-4">
+                        <div class="login-wrap bg-white  p-4 p-md-5 con">
                             <div class="d-flex ">
                                 <div class="w-100 d-flex col justify-content-center">
                                     <div class="mt-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0C9A9A" class="bi bi-person " viewBox="0 0 16 16">
-                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#0C9A9A" class="bi bi-capslock" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M7.27 1.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H11.5v1a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-1H1.654C.78 9.5.326 8.455.924 7.816L7.27 1.047zM14.346 8.5 8 1.731 1.654 8.5H4.5a1 1 0 0 1 1 1v1h5v-1a1 1 0 0 1 1-1h2.846zm-9.846 5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-1zm6 0h-5v1h5v-1z"/>
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="mb-4 text-principal ms-2">Connexion</h3>
+                                        <h3 class="mb-2 text-principal ms-2">Déposer match</h3>
                                     </div>
                                 </div>
                             </div>
-                            <form action="#" class="signin-form">
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Email <span class="text-danger">*</span></label>
-                                    <input type="text" placeholder="pauldupond@exemple.com" class="shadow-none form-control" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Mot de passe  <span class="text-danger">*</span></label>
-                                    <input id="password-field" placeholder="**********" type="password" class="shadow-none form-control" required>
-
-                                </div>
+                            <form action="#" >
+                                <form>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Titre  <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Titre...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                                <label>Description <span class="text-danger ">*</span></label>
+                                                <textarea class="shadow-none form-control uneditable-input" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Ville  <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Ville...">
+                                        </div>
+                                        <div class="col">
+                                            <label>Adresse <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Adresse...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Heure d'arrivée  <span class="text-danger">*</span></label>
+                                            <input type="time" class="shadow-none form-control" >
+                                        </div>
+                                        <div class="col">
+                                            <label>Heure de départ <span class="text-danger">*</span></label>
+                                            <input type="time" class="shadow-none form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Date<span class="text-danger">*</span></label>
+                                            <input type="date" class="shadow-none form-control" >
+                                        </div>
+                                        <div class="col">
+                                            <label>Prix <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Prix...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Nombre joueur mini<span class="text-danger">*</span></label>
+                                            <input type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
+                                        </div>
+                                        <div class="col">
+                                            <label>Nombre joueur max <span class="text-danger">*</span></label>
+                                            <input type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
+                                        </div>
+                                    </div>
+                                </form>
 
                                 <div class="d-flex row justify-content-center">
-                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">Se connecter</button>
+                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-2 mt-4 box-shadow-md">Déposer</button>
 
                                 </div>
 
                             </form>
-                            <div class="text-center mt-2">Mot de passe oublié ?</div>
-                            <p class="mt-4">Pas inscrit ? <span class="font-sm font-weight-2">S'inscrire</span></p>
                         </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-white ms-5 mt-8 d-none d-lg-block">
+                        <h1>En vous remerciant !</h1>
+                        <h3>Pour votre participation.</h3>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
 </section>
+
 
 <footer class="bg-gray-50">
     <div class="container py-5">
@@ -157,5 +235,4 @@
         </div>
     </div>
 </footer>
-
 </html>

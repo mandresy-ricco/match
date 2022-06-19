@@ -37,15 +37,15 @@
 </header>
 
 <section class="bg-image"
-         style="background-image: url('image/fondEcranConnexion.jpg');
-            height: auto; background-position: center;">
+         style="background-image: url('image/fondEcranInscription.jpg');
+            height: auto; background-position: top;">
 
-    <section class="ftco-section pt-9 pb-9 ">
+    <section class="ftco-section py-3">
         <div class="container ">
-            <div class="row justify-content-left ">
-                <div class="col-sm-9 col-md-7 col-lg-6 col-xl-4 ">
-                    <div class="wrap ">
-                        <div class="login-wrap bg-white box-shadow-md p-4 p-md-5 con">
+            <div class="row  justify-content-end ">
+                <div class="col-md-8 col-lg-7 col-xl-5  ">
+                    <div class="wrap  ">
+                        <div class="login-wrap bg-white  p-4 p-md-5 ins">
                             <div class="d-flex ">
                                 <div class="w-100 d-flex col justify-content-center">
                                     <div class="mt-1">
@@ -54,29 +54,64 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="mb-4 text-principal ms-2">Connexion</h3>
+                                        <h3 class="mb-4 text-principal ms-2">Inscription</h3>
                                     </div>
                                 </div>
                             </div>
                             <form action="#" class="signin-form">
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Email <span class="text-danger">*</span></label>
-                                    <input type="text" placeholder="pauldupond@exemple.com" class="shadow-none form-control" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Mot de passe  <span class="text-danger">*</span></label>
-                                    <input id="password-field" placeholder="**********" type="password" class="shadow-none form-control" required>
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Prénom  <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Prénom...">
+                                        </div>
+                                        <div class="col">
+                                            <label>Nom <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Nom...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Adresse mail   <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="example@exemple.com...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Mot de passe  <span class="text-danger">*</span></label>
+                                            <input type="password" class="shadow-none form-control" placeholder="**********">
+                                        </div>
+                                        <div class="col">
+                                            <label>Confirmation <span class="text-danger">*</span></label>
+                                            <input type="password" class="shadow-none form-control" placeholder="**********">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Ville  <span class="text-danger">*</span></label>
+                                            <input type="text" class="shadow-none form-control" placeholder="Ville...">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label>Photo de profils <span class="text-danger">*</span></label>
+                                            <select class="shadow-none form-select" aria-label="Default select example">
+                                                <option selected>Choisir avatar</option>
+                                                <option value="1">Ronaldo</option>
+                                                <option value="2">Messi</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-                                </div>
+                                </form>
 
                                 <div class="d-flex row justify-content-center">
-                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">Se connecter</button>
+                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">S'inscrire</button>
 
                                 </div>
 
                             </form>
-                            <div class="text-center mt-2">Mot de passe oublié ?</div>
-                            <p class="mt-4">Pas inscrit ? <span class="font-sm font-weight-2">S'inscrire</span></p>
+                            <p class="mt-4">Déjà Membre ? <span class="font-sm font-weight-2">Se connecter</span></p>
                         </div>
                     </div>
                 </div>
@@ -85,6 +120,7 @@
     </section>
 
 </section>
+
 
 <footer class="bg-gray-50">
     <div class="container py-5">
@@ -157,5 +193,4 @@
         </div>
     </div>
 </footer>
-
 </html>

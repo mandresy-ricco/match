@@ -5,13 +5,12 @@
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Title -->
-    <title>Test</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Index</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-
+    <link rel="stylesheet" href="css/style.css">
     <!-- JS Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
             integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
@@ -21,72 +20,197 @@
             integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="">
-
-<header class="container-fluid border bg-gray-50 ">
+<body class="bg-gray-50" >
+<header class="container-fluid border bg-gray-50  ">
 
     <div class="d-flex justify-content-between justify-content-lg-around ">
         <div class="d-flex flex-row p-1">
             <img alt="logo" src="image/logo.jpg" width="60" height="60">
-            <div class="d-flex col ms-2">
+            <div class=" d-flex col">
                 <h1 class="text-principal pt-1"><i>VS</i></h1>
                 <h4 class="text-gray-400 pt-4"><i>Sport.fr</i></h4>
             </div>
+            <div style="height: 40px;" class="bg-principal  d-none d-md-block border rounded  px-3 pt-1 text-white ms-5 mt-3 box-shadow-sm" >Proposer match</div>
+
+        </div>
+
+        <div class="d-lg-none d-block pt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </div>
+
+        <div class=" flex-row pt-3 d-none d-lg-flex">
+            <div class="pt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person " viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                </svg>
+            </div>
+            <h6 class="ms-2 pt-2">
+                Espace membre
+            </h6>
+            <div class="ms-5 pt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+            </div>
+            <h6 class="ms-2 pt-2">
+                Notifications
+            </h6>
         </div>
     </div>
 </header>
+<section class="box-shadow-md container-fluid"
+         style="background-image: url('image/test.jpg');background-position: left;
+            height: auto; ">
 
-<section class="bg-image"
-         style="background-image: url('image/fondEcranConnexion.jpg');
-            height: auto; background-position: center;">
-
-    <section class="ftco-section pt-9 pb-9 ">
-        <div class="container ">
-            <div class="row justify-content-left ">
-                <div class="col-sm-9 col-md-7 col-lg-6 col-xl-4 ">
-                    <div class="wrap ">
-                        <div class="login-wrap bg-white box-shadow-md p-4 p-md-5 con">
-                            <div class="d-flex ">
-                                <div class="w-100 d-flex col justify-content-center">
-                                    <div class="mt-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0C9A9A" class="bi bi-person " viewBox="0 0 16 16">
-                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="mb-4 text-principal ms-2">Connexion</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <form action="#" class="signin-form">
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Email <span class="text-danger">*</span></label>
-                                    <input type="text" placeholder="pauldupond@exemple.com" class="shadow-none form-control" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label class="form-control-placeholder" >Mot de passe  <span class="text-danger">*</span></label>
-                                    <input id="password-field" placeholder="**********" type="password" class="shadow-none form-control" required>
-
-                                </div>
-
-                                <div class="d-flex row justify-content-center">
-                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">Se connecter</button>
-
-                                </div>
-
-                            </form>
-                            <div class="text-center mt-2">Mot de passe oublié ?</div>
-                            <p class="mt-4">Pas inscrit ? <span class="font-sm font-weight-2">S'inscrire</span></p>
-                        </div>
-                    </div>
+    <div class="row blur box-shadow-sm">
+        <div class="col-2 col-lg-4"></div>
+        <div class="col">
+            <div class="d-flex row py-4 ">
+                <div class="">
+                    <img src="image/test.jpg" class="rounded-xl" height="170" width="260"/>
+                </div>
+                <div class="text-white mt-3">
+                    <h1 >Match de foot Dinard</h1>
+                    <div class="font-size-4">Le 12/02/2022 de 10h00 à 11h00</div>
+                    <div class="font-size-4">14 avenue croix guerin</div>
+                </div>
+                <div class="d-flex col">
+                    <div><img alt="" class="rounded-xl" src="image/test2.jpg" height="20" width="20"/></div>
+                    <div class="text-principal ps-2 mt-1">Arnaud Baptiste</div>
                 </div>
             </div>
+            </div>
+
+    </div>
+
+</section>
+<section class="container-fluid bg-white py-1">
+
+    <div class="d-flex flex-column flex-md-row  justify-content-md-around f">
+        <div CLASS="mx-auto mx-md-0 order-md-first order-last">
+            <div class="d-flex  mt-4">
+                <h5 class="bt_border" >À propos</h5>
+                <h5 class="px-5">Maps</h5>
+                <h5 class="">Joueur</h5>
+            </div>
         </div>
-    </section>
+        <div class="mx-auto mx-md-0">
+            <div class="d-flex col mt-1">
+                <div class="">
+                    <h5 class="text-center">11</h5>
+                    <span class="text-gray-600">joueurs</span>
+                </div>
+                <div class="px-5">
+                    <h5 class="text-center">9</h5>
+                    <span class="text-gray-600">Disponibles</span>
+                </div>
+                <div class="text-white bg-green-500 mt-2 py-2 px-3 h-75 rounded ">Libre</div>
+            </div>
+        </div>
+    </div>
 
 </section>
 
-<footer class="bg-gray-50">
+<section class="container  mt-6 " >
+    <div class="row">
+        <div class="col-11 mx-auto col-lg-7 bg-white rounded-sm box-shadow-md ">
+            <h4 class="mt-4">À propos</h4>
+            <div class="w-75 ps-3 mt-3 bor">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur mauris magna, vel convallis diam ultricies non. Quisque porta, orci quis pellentesque consectetur, orci augue eleifend sem, ut luctus leo nisl rutrum dolor. Nam nec sem et augue egestas suscipit et sit amet mi.
+            </div>
+            <h4 class="mt-5">Maps</h4>
+            <div class="w-75 ps-3 mt-3 bor">
+                La carte affiche notre localisation afin de mieux repérer notre localisation et vous facilitez le déplacement :
+            </div>
+            <img style="height: 300px" src="image/test3.png" class="img-thumbnail mt-3" alt=" "/>
+
+            <h4 class="mt-5">Joueur</h4>
+            <div class="w-75 ps-3 mt-3 bor">
+                Nous vous présentons les joueurs actuels de l'équipe, cette équipe peut varier :
+            </div>
+
+            <div class="row py-4 gap-4 justify-content-center" >
+                <div class="col-7 col-sm-5 col-md-4 col-xl-4 col-xxl-3 ">
+                    <div class=" row  mt-4 bg-principal box-shadow-sm rounded-sm de ">
+                        <div class="col-12 mt-4" >
+                            <img alt="" src="image/test2.jpg"  class=" ms-4 w-75 h-75 box-shadow-md rounded-circle"/>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-center  text-white">
+                                <span class="font-size-4 ">Victor Alexandre</span><br/>
+                                <span class="font-size-3  ">Amateur</span>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-white fs-6 jr  text-center pt-4" >Joueur 1</div>
+                    </div>
+                </div>
+                <div class="col-7 col-sm-5 col-md-4  col-xl-4 col-xxl-3  ">
+                    <div class=" row  mt-4 bg-principal box-shadow-sm rounded-sm de ">
+                        <div class="col-12 mt-4" >
+                            <img alt="" src="image/test2.jpg"  class=" ms-4 w-75 h-75 box-shadow-md rounded-circle"/>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-center  text-white">
+                                <span class="font-size-4 ">Victor Alexandre</span><br/>
+                                <span class="font-size-3  ">Amateur</span>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-white fs-6 jr  text-center pt-4" >Joueur 1</div>
+                    </div>
+                </div>
+                <div class="col-7 col-sm-5 col-md-4  col-xl-4 col-xxl-3  ">
+                    <div class=" row  mt-4 bg-principal box-shadow-sm rounded-sm de ">
+                        <div class="col-12 mt-4" >
+                            <img alt="" src="image/test2.jpg"  class=" ms-4 w-75 h-75 box-shadow-md rounded-circle"/>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-center  text-white">
+                                <span class="font-size-4 ">Victor Alexandre</span><br/>
+                                <span class="font-size-3  ">Amateur</span>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-white fs-6 jr  text-center pt-4" >Joueur 1</div>
+                    </div>
+                </div>
+                <div class="col-7 col-sm-5 col-md-4  col-xl-4 col-xxl-3  ">
+                    <div class=" row  mt-4 bg-principal box-shadow-sm rounded-sm de ">
+                        <div class="col-12 mt-4" >
+                            <img alt="" src="image/test2.jpg"  class=" ms-4 w-75 h-75 box-shadow-md rounded-circle"/>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-center  text-white">
+                                <span class="font-size-4 ">Victor Alexandre</span><br/>
+                                <span class="font-size-3  ">Amateur</span>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-white fs-6 jr  text-center pt-4" >Joueur 1</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col d-none d-lg-block">
+            <div class="bg-white w-75 pb-4 tp_border box-shadow-md rounded-md" >
+                <span class=" font-size-4 ps-2">Votre réservation :</span>
+                <hr/>
+                <div class=" ps-2 font-size-5 text-sky-700">Match de foot dinard </div>
+                <div class="ps-4  text-gray-600">18h00 → 19h00 </div>
+                <div  class="py-2  w-75 mx-auto mt-5 rounded-xl  text-center text-white font-size-4 bg-principal">Réserver</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="bg-gray-50 border-top mt-6">
     <div class="container py-5">
         <div class="row py-4">
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="image/logo.jpg" alt="" height="100" width="100" class="mb-3">
@@ -157,5 +281,5 @@
         </div>
     </div>
 </footer>
-
+</body>
 </html>
