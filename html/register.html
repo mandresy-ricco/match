@@ -58,38 +58,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="#" class="signin-form">
+                            <form class="signin-form">
                                 <form>
                                     <div class="row">
                                         <div class="col">
                                             <label>Prénom  <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Prénom...">
+                                            <input id="first-name-field" type="text" class="shadow-none form-control" placeholder="Prénom...">
                                         </div>
                                         <div class="col">
                                             <label>Nom <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Nom...">
+                                            <input id="last-name-field" type="text" class="shadow-none form-control" placeholder="Nom...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Adresse mail   <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="example@exemple.com...">
+                                            <input id="mail-field" type="text" class="shadow-none form-control" placeholder="example@exemple.com...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Mot de passe  <span class="text-danger">*</span></label>
-                                            <input type="password" class="shadow-none form-control" placeholder="**********">
+                                            <input id="password-one-field" type="password" class="shadow-none form-control" placeholder="**********">
                                         </div>
                                         <div class="col">
                                             <label>Confirmation <span class="text-danger">*</span></label>
-                                            <input type="password" class="shadow-none form-control" placeholder="**********">
+                                            <input id="password-two-field" type="password" class="shadow-none form-control" placeholder="**********">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Ville  <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Ville...">
+                                            <input id="city-field" type="text" class="shadow-none form-control" placeholder="Ville...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -106,7 +106,7 @@
                                 </form>
 
                                 <div class="d-flex row justify-content-center">
-                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">S'inscrire</button>
+                                    <button id="register" type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">S'inscrire</button>
 
                                 </div>
 
@@ -195,3 +195,4 @@
 </footer>
 </body>
 </html>
+<script src="../js/register.js"></script>
