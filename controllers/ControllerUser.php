@@ -5,14 +5,14 @@ require_once('../models/Put.php');
 require_once('../models/Delete.php');
 require_once('../models/Post.php');
 
-class ControllerMatch{
+class ControllerUser{
 
     private $_get;
     private $_post;
     private $_put;
     private $_delete;
 
-    function __construct($rqMethod,$rqRessource=null)
+    function __construct($rqMethod,$rqRessource= null)
     {
         if($rqRessource == null)
             $rqRessource = '';
@@ -37,6 +37,12 @@ class ControllerMatch{
     {
         $this->_get = new Get();
 
+        if(isset($_GET['mail']) && $_GET['password'] && $rqRessource == 'connection')
+            $this->_get->checkLogin($_GET['mail'],$_GET['password']);
+
+        if(isset($_GET['mail']) && isset($_GET['mdpOne']) && isset($_GET['mdpTwo']) && $rqRessource == 'register')
+            $this->_get->checkMail($_GET['mail'],$_GET['mdpOne'], $_GET['mdpTwo']);
+
 
     }
 
@@ -45,14 +51,14 @@ class ControllerMatch{
     {
         $this->_post = new Post();
 
-        if(isset($_POST['title']) && $_POST['min'] && isset($_POST['max'])
-            && isset($_POST['price'])&&isset($_POST['textArea']) &&isset($_POST['timeOne'])
-            && isset($_POST['timeTwo']))
+        if(isset($_POST['firstName']) && $_POST['lastName'] && isset($_POST['passwordOne'])
+            && isset($_POST['mail'])&&isset($_POST['profilePicture']) &&isset($_POST['city'])
+            && $rqRessource == 'register')
         {
-            $this->_post->createMatch(
+            $this->_post->createUser(
                 array(
-                    $_POST['title'],$_POST['min'], $_POST['max'],$_POST['price']
-                ,$_POST['textArea'],$_POST['timeOne'],$_POST['timeTwo'],$_POST['typeSport'],$_POST['']
+                    $_POST['firstName'],$_POST['lastName'], $_POST['mail'],$_POST['passwordOne']
+                ,$_POST['city'],$_POST['profilePicture']
                 )
             );
         }
@@ -73,6 +79,5 @@ class ControllerMatch{
         $this->_delete = new Delete();
 
     }
-
 
 }

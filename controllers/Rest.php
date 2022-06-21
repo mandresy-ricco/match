@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Rest{
     private $_ctrl;
@@ -9,10 +10,11 @@ class Rest{
         $request = substr($_SERVER['PATH_INFO'], 1);
         $request = explode('/', $request);
 
-        $requestRessource = array_shift($request);
+        $requestRessourceOne = array_shift($request);
+        $requestRessourceTwo = array_shift($request);
 
         try {
-            $controller = ucfirst(strtolower($requestRessource));
+            $controller = ucfirst(strtolower($requestRessourceOne));
 
             $controllerClass = "Controller" . $controller;
             $controllerFile = "../controllers/".$controllerClass.".php";
@@ -21,7 +23,7 @@ class Rest{
             if (file_exists($controllerFile )) {
 
                 require_once ($controllerFile);
-                $this->_ctrl = new $controllerClass($requestMethod, $request);
+                $this->_ctrl = new $controllerClass($requestMethod,$requestRessourceTwo);
 
             } else {
                 throw new Exception('Page introuvable');

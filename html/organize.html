@@ -90,59 +90,66 @@
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Titre  <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Titre...">
+                                            <input id="title-field" required type="text" class="shadow-none form-control" placeholder="Titre...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                                 <label>Description <span class="text-danger ">*</span></label>
-                                                <textarea class="shadow-none form-control uneditable-input" rows="3"></textarea>
+                                                <textarea id="text-area-field" required class="shadow-none form-control uneditable-input" rows="3"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Ville  <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Ville...">
+                                            <input id="city-field" required type="text" class="shadow-none form-control" placeholder="Ville...">
                                         </div>
                                         <div class="col">
                                             <label>Adresse <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Adresse...">
+                                            <input id="address-field" required type="text" class="shadow-none form-control" placeholder="Adresse...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Heure d'arrivée  <span class="text-danger">*</span></label>
-                                            <input type="time" class="shadow-none form-control" >
+                                            <input id="time-one-field"  type="time" class="shadow-none form-control" >
                                         </div>
                                         <div class="col">
                                             <label>Heure de départ <span class="text-danger">*</span></label>
-                                            <input type="time" class="shadow-none form-control" >
+                                            <input id="time-two-field"  type="time" class="shadow-none form-control" >
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Date<span class="text-danger">*</span></label>
-                                            <input type="date" class="shadow-none form-control" >
+                                            <input id="date-field" required type="date" class="shadow-none form-control" >
                                         </div>
                                         <div class="col">
                                             <label>Prix <span class="text-danger">*</span></label>
-                                            <input type="text" class="shadow-none form-control" placeholder="Prix...">
+                                            <input id="price-field" required type="text" class="shadow-none form-control" placeholder="Prix...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Nombre joueur mini<span class="text-danger">*</span></label>
-                                            <input type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
+                                            <input id="min-field" required type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
                                         </div>
                                         <div class="col">
                                             <label>Nombre joueur max <span class="text-danger">*</span></label>
-                                            <input type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
+                                            <input id="max-field" required type="number" min="0" max="11" class="shadow-none form-control" placeholder="...">
                                         </div>
+                                    </div>
+                                    <div class="col mt-2">
+                                        <label>Type de sport <span class="text-danger">*</span></label>
+                                        <select id="type-sport-field" class="shadow-none form-select"  required aria-label="Default select example">
+                                            <option value="1">Foot</option>
+                                            <option value="2">Basketball</option>
+                                        </select>
                                     </div>
                                 </form>
 
                                 <div class="d-flex row justify-content-center">
-                                    <button type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-2 mt-4 box-shadow-md">Déposer</button>
+                                    <button id="organize" type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-2 mt-4 box-shadow-md">Déposer</button>
 
                                 </div>
 
@@ -237,3 +244,5 @@
 </footer>
 </body>
 </html>
+<script src="../js/ajax.js"></script>
+<script src="../js/organize.js"></script>

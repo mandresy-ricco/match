@@ -31,8 +31,9 @@
                 <h1 class="text-principal pt-1"><i>VS</i></h1>
                 <h4 class="text-gray-400 pt-4"><i>Sport.fr</i></h4>
             </div>
+            <a href="organize.html">
             <div style="height: 40px;" class="bg-principal  d-none d-md-block border rounded  px-3 pt-1 text-white ms-5 mt-3 box-shadow-sm" >Proposer match</div>
-
+            </a>
         </div>
 
         <div class="d-lg-none d-block pt-3">
@@ -47,9 +48,11 @@
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                 </svg>
             </div>
-            <h6 class="ms-2 pt-2">
+            <a href="profiles.html">
+            <h6 class="ms-2 pt-2 text-black">
                 Espace membre
             </h6>
+            </a>
             <div class="ms-5 pt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
                     <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
@@ -72,8 +75,8 @@
     </h2>
 
     <form class="w-50 mx-auto pt-5">
-            <div class="row row-cols-2">
-                <div class="d-sm-block d-none col-2 col-lg-1 bg-principal pt-3 ps-3">
+            <div  class="row row-cols-2">
+                <div id="search-field" class=" d-sm-block d-none col-2 col-lg-1 bg-principal pt-3 ps-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
@@ -81,16 +84,16 @@
 
                 <div class="col-12 col-sm-10 col-lg-3 border bg-white pt-3 ">
                     <label>
-                        <input type="text" class="shadow-none form-control border-0 " placeholder="Entrez ville...">
+                        <input id="city-field" type="text" class="shadow-none form-control border-0 " required placeholder="Entrez ville...">
                     </label>
                 </div>
                 <div class=" col-12 col-lg-3 border bg-white  pt-3">
                     <label>
-                        <input type="text" class="shadow-none form-control border-0" placeholder="Entrez sport...">
+                        <input type="text" id="sport-field" class="shadow-none form-control border-0" required placeholder="Entrez sport...">
                     </label>
                 </div>
                 <div class="col-12 col-lg-4 border bg-white  pt-3 pb-3">
-                    <select class="custom-select mr-sm-2 border-0" id="inlineFormCustomSelect">
+                    <select id="period-field" required class="custom-select mr-sm-2 border-0">
                         <option selected>Choisir période...</option>
                         <option value="7">7 jours</option>
                         <option value="14">14 jours</option>
@@ -102,8 +105,8 @@
                 </div>
             </div>
         <div class=" custom-control custom-checkbox pb-4">
-            <input type="checkbox" class="custom-control-input mt-3" id="customCheck1">
-            <label class="custom-control-label text-principal mt-2 ms-2 font-weight-2" for="customCheck1">Complet uniquement </label>
+            <input id="full-field" type="checkbox" name="full" class="custom-control-input mt-3" >
+            <label  class="custom-control-label text-principal mt-2 ms-2 font-weight-2" for="full-field">Complet uniquement </label>
         </div>
 
     </form>
@@ -438,3 +441,5 @@
 </footer>
 </body>
 </html>
+<script src="../js/ajax.js"></script>
+<script src="../js/welcome.js.back"></script>

@@ -63,40 +63,48 @@
                                     <div class="row">
                                         <div class="col">
                                             <label>Prénom  <span class="text-danger">*</span></label>
-                                            <input id="first-name-field" type="text" class="shadow-none form-control" placeholder="Prénom...">
+                                            <input id="first-name-field" type="text" class="shadow-none form-control" required placeholder="Prénom...">
                                         </div>
                                         <div class="col">
                                             <label>Nom <span class="text-danger">*</span></label>
-                                            <input id="last-name-field" type="text" class="shadow-none form-control" placeholder="Nom...">
+                                            <input id="last-name-field" type="text" class="shadow-none form-control" required placeholder="Nom...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Adresse mail   <span class="text-danger">*</span></label>
-                                            <input id="mail-field" type="text" class="shadow-none form-control" placeholder="example@exemple.com...">
+                                            <input id="mail-field" type="text" aria-describedby="error-mail" required class="shadow-none form-control" placeholder="example@exemple.com...">
+                                            <div id="error-mail" class="d-none">
+                                                L'adresse mail est déjà utilisée
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Mot de passe  <span class="text-danger">*</span></label>
-                                            <input id="password-one-field" type="password" class="shadow-none form-control" placeholder="**********">
+                                            <input id="password-one-field" aria-describedby="error-password-one" required type="password" class="shadow-none form-control" placeholder="**********">
+                                            <div id="error-password-one" class="d-none">
+                                                Les mots de passe ne correspondent pas
+                                            </div>
                                         </div>
                                         <div class="col">
                                             <label>Confirmation <span class="text-danger">*</span></label>
-                                            <input id="password-two-field" type="password" class="shadow-none form-control" placeholder="**********">
+                                            <input id="password-two-field" aria-describedby="error-password-two" required type="password" class="shadow-none form-control" placeholder="**********">
+                                            <div id="error-password-two" class="d-none">
+                                                Les mots de passe ne correspondent pas
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Ville  <span class="text-danger">*</span></label>
-                                            <input id="city-field" type="text" class="shadow-none form-control" placeholder="Ville...">
+                                            <input id="city-field" type="text" class="shadow-none form-control" required placeholder="Ville...">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
                                             <label>Photo de profils <span class="text-danger">*</span></label>
-                                            <select class="shadow-none form-select" aria-label="Default select example">
-                                                <option selected>Choisir avatar</option>
+                                            <select id="profiles-field" class="shadow-none form-select"  required aria-label="Default select example">
                                                 <option value="1">Ronaldo</option>
                                                 <option value="2">Messi</option>
                                             </select>
@@ -104,14 +112,17 @@
                                     </div>
 
                                 </form>
-
-                                <div class="d-flex row justify-content-center">
-                                    <button id="register" type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">S'inscrire</button>
-
-                                </div>
+                                <a href="connection.html">
+                                    <div class="d-flex row justify-content-center">
+                                        <button id="register" type="submit" class=" rounded-sm border-0 text-white bg-principal w-50 px-3 py-1 mt-4 box-shadow-md">S'inscrire</button>
+                                    </div>
+                                </a>
 
                             </form>
-                            <p class="mt-4">Déjà Membre ? <span class="font-sm font-weight-2">Se connecter</span></p>
+                            <p class="mt-4">
+                                Déjà Membre ?
+                                <a  style=" text-decoration:none;" href="connection.html" class="font-sm font-weight-2 text-black">Se connecter</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -195,4 +206,5 @@
 </footer>
 </body>
 </html>
+<script src="../js/ajax.js"></script>
 <script src="../js/register.js"></script>
