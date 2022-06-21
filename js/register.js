@@ -58,10 +58,3 @@ $('#register').on('click',  ()  =>
             + "&mdpOne="+$("#password-one-field" ).val()+ "&mdpTwo="+ $("#password-two-field" ).val(),register);
     }
 );
-
-function createSelect()
-{
-
-}
-
-ajaxRequest('GET', '../controllers/Rest.php/User/',createSelect);

@@ -39,18 +39,21 @@ class ControllerMatch{
 
         if ($rqRessource == '')
         {
-
+            $this->_get->getAllMatch();
         }
-        elseif (isset($_GET['city']) && isset($_GET['full'])  && isset($_GET['sport'])  && isset($_GET['period']))
+
+        if (isset($_GET['city']) && isset($_GET['full'])  && isset($_GET['sport'])  && isset($_GET['period']))
         {
             $this->_get->getSortMatch($_GET['city'],$_GET['full'],$_GET['sport'],$_GET['period']);
         }
+
     }
 
 
     public function typePost($rqRessource)
     {
         $this->_post = new Post();
+
 
         if(isset($_POST['title']) && $_POST['min'] && isset($_POST['max'])
             && isset($_POST['price'])&&isset($_POST['textArea']) &&isset($_POST['timeOne'])
@@ -59,7 +62,8 @@ class ControllerMatch{
             $this->_post->createMatch(
                 array(
                     $_POST['title'],$_POST['min'], $_POST['max'],$_POST['price']
-                ,$_POST['textArea'],$_POST['timeOne'],$_POST['timeTwo'],$_POST['typeSport'],$_POST['']
+                ,$_POST['textArea'],$_POST['timeOne'],$_POST['timeTwo'],$_POST['address'],$_POST['city']
+                ,$_POST['typeSport'],$_POST['date']
                 )
             );
         }

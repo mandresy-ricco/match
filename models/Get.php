@@ -6,10 +6,16 @@ class Get extends DataBase{
 
     public function getAllMatch(){
 
-        $request = 'SELECT * FROM match';
+        $request = 'SELECT * FROM match
+         JOIN sport s on match.id_sport = s.id_sport
+         JOIN personne p on p.id_personne = match.id_personne
+         WHERE statut = false';
+
         $statement = $this->_bdd->prepare($request);
         $statement->execute();
-        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        echo json_encode($result);
     }
 
     public function getSortMatch($city,$full,$sport,$period){
@@ -19,6 +25,7 @@ class Get extends DataBase{
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
     }
+
 
     public function checkLogin($mail, $password){
 
