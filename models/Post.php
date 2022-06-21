@@ -7,7 +7,7 @@ class Post extends DataBase
 
     public function createUser($data)
     {
-        $request = "INSERT INTO personne (prenom, nom,mail,mdp,id_lieu,id_avatar) VALUES (?,?,?,?,?,?)";
+        $request = "INSERT INTO personne (prenom, nom,mail,mdp,ville,id_avatar) VALUES (?,?,?,?,?,?)";
         $stmt = $this->_bdd->prepare ($request);
         $stmt->execute($data);
         echo json_encode(1);

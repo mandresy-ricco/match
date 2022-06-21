@@ -12,7 +12,7 @@ function register(data)
         let firstName = $( "#first-name-field" ).val();
         let lastName = $( "#last-name-field" ).val();
         let mail = $("#mail-field").val();
-        let profilePicture =  $( "#profiles-field option:selected" ).val();
+        let profilePicture =  $("#profiles-field option:selected" ).val();
         let city = $( "#city-field" ).val();
 
         ajaxRequest('POST', '../controllers/Rest.php/User/register' , () => {console.log('insertion ok')},
