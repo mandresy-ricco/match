@@ -33,7 +33,7 @@ class Get extends DataBase{
             echo json_encode(0); // no mail
         else
         {
-            if ($result['mdp'] != $password)
+            if ($result['mdp'] != hash('md5', $password))
                 echo json_encode(1);  // mistake password
             else {
                 $_SESSION['id_personne'] = $result['id_personne'];
