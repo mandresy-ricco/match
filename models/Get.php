@@ -4,6 +4,22 @@ require_once('DataBase.php');
 
 class Get extends DataBase{
 
+    public function getAllMatch(){
+
+        $request = 'SELECT * FROM match';
+        $statement = $this->_bdd->prepare($request);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getSortMatch($city,$full,$sport,$period){
+
+        $request = 'SELECT * FROM match';
+        $statement = $this->_bdd->prepare($request);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function checkLogin($mail, $password){
 
         $request = 'SELECT mdp,id_personne FROM personne WHERE mail = :mail';

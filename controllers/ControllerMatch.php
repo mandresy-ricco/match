@@ -37,7 +37,14 @@ class ControllerMatch{
     {
         $this->_get = new Get();
 
+        if ($rqRessource == '')
+        {
 
+        }
+        elseif (isset($_GET['city']) && isset($_GET['full'])  && isset($_GET['sport'])  && isset($_GET['period']))
+        {
+            $this->_get->getSortMatch($_GET['city'],$_GET['full'],$_GET['sport'],$_GET['period']);
+        }
     }
 
 

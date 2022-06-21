@@ -4,12 +4,6 @@ function addMatch(data)
 
 }
 
-
-
-//ajaxRequest('GET', '../controllers/Rest.php/Match/recent',addMatch);
-
-
-
 $( "#search-field" ).on('click',  () =>
     {
         let city = $( "#city-field" ).val();
@@ -21,5 +15,12 @@ $( "#search-field" ).on('click',  () =>
         console.log("full",full);
         console.log("sport",sport);
         console.log("city",city);
+
+        ajaxRequest('GET', '../controllers/Rest.php/Match'+'&period='+period+
+            "&city="+city+"&full="+full+"&sport="+sport,addMatch);
     }
 );
+
+ajaxRequest('GET', '../controllers/Rest.php/Match',() =>{
+    console.log('récupation ok');
+});
