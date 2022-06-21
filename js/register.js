@@ -55,6 +55,13 @@ $('#register').on('click',  ()  =>
         drop();
         event.preventDefault();
         ajaxRequest('GET', '../controllers/Rest.php/User/register'+"?mail="+$( "#mail-field" ).val()
-            + "&mdpOne="+$( "#password-one-field" ).val()+ "&mdpTwo="+ $("#password-two-field" ).val(),register);
+            + "&mdpOne="+$("#password-one-field" ).val()+ "&mdpTwo="+ $("#password-two-field" ).val(),register);
     }
 );
+
+function createSelect()
+{
+
+}
+
+ajaxRequest('GET', '../controllers/Rest.php/User/',createSelect);

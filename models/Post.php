@@ -26,7 +26,7 @@ class Post extends DataBase
 
         $request = "INSERT INTO match (denomination, nombre_joueur_min, 
                    nombre_joueur_max, prix, statut, description, chemin_image, 
-                   debut, fin, id_sport, id_lieu, id_personne) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                   debut, fin, id_sport, ville, id_personne) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->_bdd->prepare ($request);
         $stmt->execute($array);
         echo json_encode(1);
