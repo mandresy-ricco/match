@@ -19,7 +19,7 @@ function register(data)
             "firstName="+firstName+"&lastName="+lastName+"&passwordOne="+passwordOne
             +"&mail="+mail+"&profilePicture="+profilePicture+ "&city="+city);
 
-        setTimeout(redirection, 100);
+        setTimeout(redirection, 1000);
 
 
 
