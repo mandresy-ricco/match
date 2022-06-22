@@ -85,12 +85,12 @@ let infoMatch = "<div class=\"row blur box-shadow-sm\">\n" +
 let cardPlayer = "<div class=\"col-7 col-sm-5 col-md-4 col-xl-4 col-xxl-3 \">\n" +
     "                    <div class=\" row  mt-4 bg-principal box-shadow-sm rounded-sm de \">\n" +
     "                        <div class=\"col-12 mt-4\" >\n" +
-    "                            <img alt=\"\" src=\"--link--\"  class=\" ms-4 w-75 h-75 box-shadow-md rounded-circle\"/>\n" +
+    "                            <img alt=\"\" src=\"--link--\" height='100' width='100'  class=\" ms-4 w-75 h-75 box-shadow-md rounded-circle\"/>\n" +
     "                        </div>\n" +
     "                        <div class=\"col-12\">\n" +
     "                            <div class=\"text-center  text-white\">\n" +
     "                                <span class=\"font-size-4 \">--nameOne-- --nameTwo--</span><br/>\n" +
-    "                                <span class=\"font-size-3  \">--fs--</span>\n" +
+    "                                <span class=\"font-size-3 overflow-auto \">FS : --fs--</span>\n" +
     "                                <hr/>\n" +
     "                            </div>\n" +
     "                        </div>\n" +
