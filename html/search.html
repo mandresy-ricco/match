@@ -84,13 +84,13 @@
 
             <div class="col-12 col-sm-10 col-lg-3 border bg-white pt-3 ">
                 <label>
-                    <input type="text" id="city-field" class="form-control border-0 shadow-none" placeholder="Entrez ville...">
+                    <input type="text" id="city-field" class="form-select form-control border-0 shadow-none" placeholder="Entrez ville...">
                 </label>
             </div>
             <div class=" col-12 col-lg-4 border bg-white  pt-3 pb-3">
                 <label>
-                    <select id="sport-field" class="custom-select  border-0" >
-                        <option  selected>Choisir sport...</option>
+                    <select id="sport-field" class="form-select shadow-none border-0  " >
+                        <option value=""  selected>Choisir sport...</option>
                         <option value="1">Basketball</option>
                         <option value="2">Handball</option>
                         <option value="3">Rugby</option>
@@ -100,12 +100,13 @@
             </div>
             <div class="col-12 col-lg-4 border bg-white  pt-3 pb-3">
                 <label>
-                <select id="period-field" class="custom-select  border-0" >
-                    <option  selected>Choisir période...</option>
+                <select id="period-field" class="form-select shadow-none border-0 custom-select "  >
+                    <option value=""  selected>Choisir période...</option>
                     <option value="7">7 jours</option>
                     <option value="14">14 jours</option>
                     <option value="21">21 jours</option>
                 </select>
+
                 </label>
             </div>
             <div class="d-block d-sm-none text-white text-center col-12 col-lg-3 border bg-principal pb-3 pt-3">
@@ -125,10 +126,14 @@
     <h5 class="">Résultats de votre recherche : </h5>
 </section>
 
+<div id="information" class="d-none" >
+    Pas de match trouvé avec votre recherche !
+</div>
 <section class="container-sm d-flex justify-content-around gap-2 flex-wrap mt-4 mt-sm-0">
 
+
     <div class="row">
-        <div class="col-3 mt-5 border border-3  d-none d-lg-block"
+        <div id="unless" class="col-3 mt-5 border border-3  d-none d-lg-block"
              style="background-image: url('../image/test2.jpg');height: 110vh; background-position: center">
         </div>
         <div id="all-card" class="col-10  col-lg-8">

@@ -12,7 +12,7 @@ class ControllerUser{
     private $_put;
     private $_delete;
 
-    function __construct($rqMethod,$rqRessource= null)
+    function __construct($rqMethod,$rqRessource= null,$rqRessourceTwo=null)
     {
         if($rqRessource == null)
             $rqRessource = '';

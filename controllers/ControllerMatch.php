@@ -12,14 +12,11 @@ class ControllerMatch{
     private $_put;
     private $_delete;
 
-    function __construct($rqMethod,$rqRessource=null)
+    function __construct($rqMethod,$rqRessource=null,$requestRessourceTwo=null)
     {
-        if($rqRessource == null)
-            $rqRessource = '';
-
         switch ($rqMethod) {
             case "GET":
-                $this->typeGet($rqRessource);
+                $this->typeGet($rqRessource,$requestRessourceTwo);
                 break;
             case "POST":
                 $this->typePost($rqRessource);
@@ -33,19 +30,29 @@ class ControllerMatch{
         }
     }
 
-    public function typeGet($rqRessource)
+    public function typeGet($rqRessource,$requestRessourceTwo)
     {
         $this->_get = new Get();
 
-        if ($rqRessource == '')
-        {
+        if (!isset($_GET['city']) && !isset($_GET['full']) && !isset($rqRessource) && !isset($requestRessourceTwo)){
             $this->_get->getAllMatch();
         }
 
-        if (isset($_GET['city']) && isset($_GET['full'])  && isset($_GET['sport'])  && isset($_GET['period']))
-        {
-            $this->_get->getSortMatch($_GET['city'],$_GET['full'],$_GET['sport'],$_GET['period']);
+        if(isset($rqRessource) && !isset($_GET['city']) && !isset($_GET['full']) && !isset($requestRessourceTwo)){
+
+            $this->_get->getOneMatch($rqRessource);
+
         }
+
+        if($requestRessourceTwo == "Player" && isset($rqRessource)){
+
+           $this->_get->getAllPlayer($rqRessource);
+        }
+
+        if ( isset($_GET['city']) && isset($_GET['full']) && $_GET['sport'] != ""  && $_GET['period'] != "" ) {
+            $this->_get->getSortMatch($_GET['city'], $_GET['full'], $_GET['sport'], $_GET['period']);
+        }
+
 
     }
 
