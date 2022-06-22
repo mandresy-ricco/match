@@ -12,6 +12,8 @@ class Rest{
 
         $requestRessourceOne = array_shift($request);
         $requestRessourceTwo = array_shift($request);
+        $requestRessourceTree = array_shift($request);
+
 
         try {
             $controller = ucfirst(strtolower($requestRessourceOne));
@@ -23,7 +25,7 @@ class Rest{
             if (file_exists($controllerFile )) {
 
                 require_once ($controllerFile);
-                $this->_ctrl = new $controllerClass($requestMethod,$requestRessourceTwo);
+                $this->_ctrl = new $controllerClass($requestMethod,$requestRessourceTwo,$requestRessourceTree);
 
             } else {
                 throw new Exception('Page introuvable');
