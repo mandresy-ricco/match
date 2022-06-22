@@ -46,5 +46,18 @@ class Post extends DataBase
         echo json_encode(1);
     }
 
+    function createReservation($id_match){
+        // false si c le client qui fais la demande
+        $request = "INSERT INTO participation (demandeur, id_match, id_personne) VALUES (?,?,?)";
+        $stmt = $this->_bdd->prepare ($request);
+        $stmt->execute(array(
+            0,
+            $id_match,
+            $_SESSION['id_personne']
+        ));
+        echo json_encode(1);
+
+    }
+
 
 }

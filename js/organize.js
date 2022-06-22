@@ -14,7 +14,8 @@ $('#organize').on('click',  () => {
         let typeSport = $("#type-sport-field option:selected").val();
 
     ajaxRequest('POST', '../controllers/Rest.php/Match/', ()=>{
-            console.log('Déposer ok')
+            window.location.href = "../html/search.html";
+
         }
         , "title="+title+"&textArea="+textArea+"&city="+city+"&address="+address+"&timeOne="+timeOne
         +"&timeTwo="+timeTwo+"&date="+date+"&price="+price+"&min="+min+"&max="+max+"&typeSport="+typeSport

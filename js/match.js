@@ -97,3 +97,16 @@ function main(){
 
 
 }main();
+
+$('#book-fill').on('click',  () =>
+    {
+        event.preventDefault();
+
+        ajaxRequest('POST', '../controllers/Rest.php/Match',
+            () =>{
+            window.location.href = "../html/search.html";
+        },"id_match="+getParameter('id_match'));
+
+    }
+);
+
