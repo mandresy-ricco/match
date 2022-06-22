@@ -35,7 +35,7 @@
             </div>
         </div>
         </div>
-        <div>a
+        <div>
         <a href="organize.html"><div style="height: 40px;" class="bg-principal  d-none d-md-block border rounded  px-3 pt-1 text-white ms-5 mt-3 box-shadow-sm" >Proposer match</div></a>
         </div>
 
@@ -112,7 +112,7 @@
                             <input type="password" class="form-control shadow-none " placeholder="*********"/>
                         </div>
                         <div class="dropdown-item drop d-flex col">
-                            <input type="submit" class="form-control shadow-none bg-principal text-white" value="ok" style="width: 50px">
+                            <input id="modify-profile" type="submit" class="form-control shadow-none bg-principal text-white" value="ok" style="width: 50px">
                             <a class=" bg-gray-100 ms-3 shadow-none mt-3 text-black rounded text-center" style="width: 100px">Annuler</a>
                         </div>
 
@@ -123,55 +123,56 @@
 
     </div>
         <div class="container p-5  mt-4 rounded-sm overflow-auto bg-white">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Match</th>
-                <th scope="col">Date</th>
-                <th scope="col">Heure début</th>
-                <th scope="col">Score</th>
-                <th scope="col">Meilleur joueur</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td scope="row">
-                    <span>Match Five (handball)</span><br/>
-                    <span class="font-size-2 text-green-500">Prochainement &#8226; 12 rue Jean jeaurés &#8226; Paris</span>
-                </td>
-                <td>12/12/2022</td>
-                <td>19h00</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td scope="row">
-                    <span>
-                        Match Arka (Basket)
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
-                          <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
-                          <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
-                        </svg>
-                    </span><br/>
-                    <span class="font-size-2 text-warning">Terminé (non maj) &#8226; 15 rue de la calle &#8226; Nantes</span>
-                </td>
-                <td>12/12/2022</td>
-                <td>19h00</td>
-                <td><input type="text" class="form-control w-50 w-md-100 shadow-none" placeholder="Score..."/> </td>
-                <td><input type="text" class="form-control w-50 shadow-none" placeholder="Meilleur joueur..."/></td>
-            </tr>
-            <tr>
-                <td scope="row">
-                    <span>Match Karbo (foot)</span><br/>
-                    <span class="font-size-2 text-primary">Fini (maj) &#8226; 120 rue croix geurin &#8226; Marseille</span>
-                </td>
-                <td>12/12/2022</td>
-                <td>19h00</td>
-                <td>2</td>
-                <td>Adam Sandler</td>
-            </tr>
-            </tbody>
-        </table>
+            <div class="bt_border fs-4">Mon historique</div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Match</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure début</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Meilleur joueur</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td scope="row">
+                        <span>Match Five (handball)</span><br/>
+                        <span class="font-size-2 text-green-500">Prochainement &#8226; 12 rue Jean jeaurés &#8226; Paris</span>
+                    </td>
+                    <td>12/12/2022</td>
+                    <td>19h00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row">
+                        <span>
+                            Match Arka (Basket)
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                              <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                              <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                            </svg>
+                        </span><br/>
+                        <span class="font-size-2 text-warning">Terminé (non maj) &#8226; 15 rue de la calle &#8226; Nantes</span>
+                    </td>
+                    <td>12/12/2022</td>
+                    <td>19h00</td>
+                    <td><input type="text" class="form-control w-50 w-md-100 shadow-none" placeholder="Score..."/> </td>
+                    <td><input type="text" class="form-control w-50 shadow-none" placeholder="Meilleur joueur..."/></td>
+                </tr>
+                <tr>
+                    <td scope="row">
+                        <span>Match Karbo (foot)</span><br/>
+                        <span class="font-size-2 text-primary">Fini (maj) &#8226; 120 rue croix geurin &#8226; Marseille</span>
+                    </td>
+                    <td>12/12/2022</td>
+                    <td>19h00</td>
+                    <td>2</td>
+                    <td>Adam Sandler</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="container p-5 mt-4 rounded-sm bg-white mt-4">
             <div class="row gap-4 justify-content-center">
