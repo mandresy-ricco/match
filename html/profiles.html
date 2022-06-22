@@ -100,16 +100,19 @@
                     </div>
                     <div class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
                         <div class="dropdown-item drop" >
-                            <input type="text" class="uneditable-input form-control shadow-none " placeholder="Age...">
+                            <input id="old-field" type="text" class="uneditable-input form-control shadow-none " placeholder="Age...">
                         </div>
                         <div class="dropdown-item drop" >
-                            <input type="text" class="form-control shadow-none " placeholder="Amateur..."/>
+                            <input id="type-field" type="text" class="form-control shadow-none " placeholder="Amateur..."/>
                         </div>
                         <div class="dropdown-item drop" >
-                            <input type="text" class="form-control shadow-none " placeholder="Caen..."/>
+                            <input id="city-field" type="text" class="form-control shadow-none " placeholder="Caen..."/>
                         </div>
                         <div class="dropdown-item drop" >
-                            <input type="password" class="form-control shadow-none " placeholder="*********"/>
+                            <input id="password-field" type="password" class="form-control shadow-none " placeholder="*********"/>
+                        </div>
+                        <div class="dropdown-item drop" >
+                            <input id="grade-field" type="text" class="form-control shadow-none " placeholder="note..."/>
                         </div>
                         <div class="dropdown-item drop d-flex col">
                             <input id="modify-profile" type="submit" class="form-control shadow-none bg-principal text-white" value="ok" style="width: 50px">
@@ -123,7 +126,7 @@
 
     </div>
         <div class="container p-5  mt-4 rounded-sm overflow-auto bg-white">
-            <div class="bt_border fs-4">Mon historique</div>
+            <div class="bt_border fs-4 mb-3">Mon historique</div>
             <table class="table table-striped">
                 <thead>
                 <tr>
