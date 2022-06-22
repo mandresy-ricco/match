@@ -34,9 +34,13 @@ function replaceCardPlayer(data,number)
 {
 
     console.log(data);
-    let infoDisplayPlayer = cardPlayer.replace("--nameOne--", data.chemin_image);
-    infoDisplayPlayer = infoDisplayPlayer.replace("--nameTwo--", data.chemin);
-    infoDisplayPlayer = infoDisplayPlayer.replace("--fs--", data.nom_s);
+
+    let nameOne = data.prenom[0].toUpperCase() +data.prenom.slice(1);
+    let nameTwo = data.nom[0].toUpperCase() + data.nom.slice(1);
+    let infoDisplayPlayer = cardPlayer.replace("--nameOne--", nameOne);
+    infoDisplayPlayer = infoDisplayPlayer.replace("--nameTwo--", nameTwo);
+    infoDisplayPlayer = infoDisplayPlayer.replace("--link--", data.chemin);
+    infoDisplayPlayer = infoDisplayPlayer.replace("--fs--", data.fs);
     infoDisplayPlayer = infoDisplayPlayer.replace("--number--", number);
 
     return infoDisplayPlayer;
@@ -93,3 +97,16 @@ function main(){
 
 
 }main();
+
+$('#book-fill').on('click',  () =>
+    {
+        event.preventDefault();
+
+        ajaxRequest('POST', '../controllers/Rest.php/Match',
+            () =>{
+            window.location.href = "../html/search.html";
+        },"id_match="+getParameter('id_match'));
+
+    }
+);
+

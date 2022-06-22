@@ -109,10 +109,11 @@ class Get extends DataBase{
     public function getAllPlayer($id_match){
 
         $request = '
-        select nom,prenom,fs.denomination fs,p.statut stat
+        select nom,prenom,fs.denomination fs,p.statut stat,a.chemin
         from participation p
         JOIN personne p2 on p2.id_personne = p.id_personne
         JOIN forme_sportive fs on fs.id_forme = p2.id_forme
+        JOIN avatar a on a.id_avatar = p2.id_avatar
         JOIN match m on m.id_match = p.id_match
         where p.id_match = :id and p.statut = true;
          ';

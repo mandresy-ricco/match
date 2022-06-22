@@ -75,6 +75,10 @@ class ControllerMatch{
             );
         }
 
+        if(isset($_POST['id_match'])){
+            $this->_post->createReservation($_POST['id_match']);
+        }
+
 
     }
 
