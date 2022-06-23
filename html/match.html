@@ -51,14 +51,7 @@
                 Espace membre
             </h6>
             </a>
-            <div class="ms-5 pt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                </svg>
-            </div>
-            <h6 class="ms-2 pt-2">
-                Notifications
-            </h6>
+
         </div>
     </div>
 </header>
@@ -70,9 +63,8 @@
 
     <div class="d-flex flex-column flex-md-row  justify-content-md-around f">
         <div CLASS="mx-auto mx-md-0 order-md-first order-last">
-            <div class="d-flex  mt-4">
-                <a href="#info" ><h5 class="text-black" >À propos</h5></a>
-                <a href="#maps" ><h5 class="px-5 text-black">Maps</h5></a>
+            <div class="d-flex gap-4  mt-4">
+                <a href="#info" ><h5 class="text-black " >À propos</h5></a>
                 <a href="#player" ><h5 class="text-black">Joueur</h5></a>
             </div>
         </div>
@@ -86,7 +78,9 @@
                     <h5 id="available-space-fill" class="text-center">9</h5>
                     <span class="text-gray-600">Disponibles</span>
                 </div>
-                <div class="text-white bg-green-500 mt-2 py-2 px-3 h-75 rounded ">Libre</div>
+                <div id="availability-fill" class="text-white bg-green-500 mt-2 py-2 px-3 h-75 rounded ">
+                  Libre
+                </div>
             </div>
         </div>
     </div>
@@ -100,11 +94,6 @@
             <div id="description-fill" class="w-75 ps-3 mt-3 bor">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur mauris magna, vel convallis diam ultricies non. Quisque porta, orci quis pellentesque consectetur, orci augue eleifend sem, ut luctus leo nisl rutrum dolor. Nam nec sem et augue egestas suscipit et sit amet mi.
             </div>
-            <h4 class="mt-5" id="maps">Maps</h4>
-            <div class="w-75 ps-3 mt-3 bor">
-                La carte affiche notre localisation afin de mieux repérer notre localisation et vous facilitez le déplacement :
-            </div>
-            <img style="height: 300px" src="../image/test3.png" class="img-thumbnail mt-3" alt=" "/>
 
             <h4 class="mt-5 " >Joueur</h4>
             <div class="w-75 ps-3 mt-3 bor">
@@ -124,7 +113,7 @@
                 <div id="sport-and-city-fill" class=" ps-2 font-size-5 text-sky-700"></div>
                 <div id="date-fill" class="ps-4  text-gray-600">18h00 → 19h00 </div>
                 <div class="d-flex col justify-content-center">
-                <button id="book-fill"  class="py-2  w-75 border-0 mt-5 rounded-xl  text-center text-white font-size-4 bg-principal"></button>
+                <button  id="book-fill"  class="py-2  w-75 border-0 mt-5 rounded-xl  text-center text-white font-size-4 bg-principal"></button>
                 </div>
             </div>
         </div>

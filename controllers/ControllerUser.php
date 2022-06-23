@@ -14,12 +14,9 @@ class ControllerUser{
 
     function __construct($rqMethod,$rqRessource= null,$rqRessourceTwo=null)
     {
-        if($rqRessource == null)
-            $rqRessource = '';
-
         switch ($rqMethod) {
             case "GET":
-                $this->typeGet($rqRessource);
+                $this->typeGet($rqRessource,$rqRessourceTwo);
                 break;
             case "POST":
                 $this->typePost($rqRessource);
@@ -33,9 +30,13 @@ class ControllerUser{
         }
     }
 
-    public function typeGet($rqRessource)
+    public function typeGet($rqRessource,$rqRessourceTwo)
     {
         $this->_get = new Get();
+
+        if(!isset($rqRessource) && !isset($rqRessourceTwo)){
+            $this->_get->getOnePlayer();
+        }
 
         if(isset($_GET['mail']) && $_GET['password'] && $rqRessource == 'connection')
             $this->_get->checkLogin($_GET['mail'],$_GET['password']);
@@ -43,7 +44,11 @@ class ControllerUser{
         if(isset($_GET['mail']) && isset($_GET['mdpOne']) && isset($_GET['mdpTwo']) && $rqRessource == 'register')
             $this->_get->checkMail($_GET['mail'],$_GET['mdpOne'], $_GET['mdpTwo']);
 
+        if($rqRessource == 'historical' && isset($_GET['type']))
+            $this->_get->getHistorical($_GET['type']);
 
+        if($rqRessource == 'notification' && isset($_GET['type']))
+            $this->_get->getNotification($_GET['type']);
     }
 
 

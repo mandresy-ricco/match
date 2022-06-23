@@ -94,6 +94,132 @@ let cardPlayer = "<div class=\"col-7 col-sm-5 col-md-4 col-xl-4 col-xxl-3 \">\n"
     "                                <hr/>\n" +
     "                            </div>\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-12 bg-white fs-6 jr  text-center pt-4\" >Joueur --number--</div>\n" +
+    "                        <div class=\"col-12 bg-white fs-6 jr  text-center pt-4\" >--number--</div>\n" +
     "                    </div>\n" +
     "                </div>";
+
+
+let ColumnTable= "<tr >\n" +
+    "                    <td scope=\"row\">\n" +
+    "                        <span>--title-- (--sport--)</span><br/>\n" +
+    "                        <span class=\"font-size-2 --color--\">--info-- &#8226; --address--&#8226; --city--</span>\n" +
+    "                    </td>\n" +
+    "                    <td>--date--</td> <td>--score-match--</td><td>--best-player--</td><td>--sub--</td></tr> ";
+
+
+let CardAsk = "<div class=\"col-12 col-sm-10 col-md-7 col-xl-4\">\n" +
+    "                <div class=\"d-flex row  p-2 grad_1 rounded-sm box-shadow-md\">\n" +
+    "                    <div class=\"d-flex col justify-content-between \">\n" +
+    "                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-x\" viewBox=\"0 0 16 16\">\n" +
+    "                            <path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\"/>\n" +
+    "                        </svg>\n" +
+    "                        <div>\n" +
+    "                            <div class=\"d-flex col\">\n" +
+    "                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"white\" class=\"bi bi-bell\" viewBox=\"0 0 16 16\">\n" +
+    "                                    <path d=\"M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z\"/>\n" +
+    "                                </svg>\n" +
+    "                                <div class=\"text-white ms-1\">Notification </div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div>\n" +
+    "                        <div class=\"d-flex col justify-content-around mt-2 gap-4\">\n" +
+    "                            <img src=\"--link--\" alt=\"\" class=\"rounded-circle  d-none d-sm-block\" height=\"100\" width=\"110\" >\n" +
+    "                            <div class=\"\">\n" +
+    "                                <h2 class=\"\" >--nameOne-- --nameTwo--</h2>\n" +
+    "                                <div class=\"font-weight-2\">Joueur</div>\n" +
+    "                                <div class=\"text-gray-600\">Match --city-- le --date--</div>\n" +
+    "                                <div class=\"d-flex col gap-4 mt-4 mb-3\">\n" +
+    "                                    <button id='--id-accept--' class=\"font-weight-2 bg-white py-2 px-3 border-0 rounded-sm form-control  box-shadow-md\">Accepter</button>\n" +
+    "                                    <button id='--id-deny--' class=\"font-weight-2 bg-white  py-2 px-3 border-0  rounded-sm form-control box-shadow-md\">Refuser</button>\n" +
+    "                                </div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>";
+
+let cardRefuse = "" +
+    "<div class=\"col-12 col-sm-10 col-md-7 col-xl-4\">\n" +
+    "                  <div class=\"d-flex row  p-2 grad_2 rounded-sm box-shadow-md\">\n" +
+    "                      <div class=\"d-flex col justify-content-between\">\n" +
+    "                          <div>\n" +
+    "                              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-x\" viewBox=\"0 0 16 16\">\n" +
+    "                                  <path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\"/>\n" +
+    "                              </svg>\n" +
+    "                          </div>\n" +
+    "                          <div>\n" +
+    "                              <div class=\"d-flex col\">\n" +
+    "                                  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"white\" class=\"bi bi-bell\" viewBox=\"0 0 16 16\">\n" +
+    "                                      <path d=\"M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z\"/>\n" +
+    "                                  </svg>\n" +
+    "                                  <div class=\"text-white ms-1\">Notification </div>\n" +
+    "                              </div>\n" +
+    "                          </div>\n" +
+    "                      </div>\n" +
+    "                      <div>\n" +
+    "                          <div class=\"d-flex row justify-content-around mt-2 gap-4\">\n" +
+    "                              <div class=\"d-flex col gap-4\">\n" +
+    "                                  \n" +
+    "                                  <div>\n" +
+    "                                      " +
+    "                                      <div class=\"font-weight-2\">Organisateur</div>\n" +
+    "                                      <div class=\"text-gray-600\">--title-- (--sport--) <br/> --city-- le --date--</div>\n" +
+    "                                  </div>\n" +
+    "                              </div>\n" +
+    "                              <div class=\"\">\n" +
+    "                                  <div class=\"d-flex col gap-4 mt-4 mb-3 mx-auto\">\n" +
+    "                                      <div class=\" box-shadow-md font-weight-2 bg-white py-2 px-3 rounded-sm\">\n" +
+    "                                          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-x\" viewBox=\"0 0 16 16\">\n" +
+    "                                              <path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\"/>\n" +
+    "                                          </svg>\n" +
+    "                                          <span>À refusé votre réservation</span>\n" +
+    "                                      </div>\n" +
+    "                                  </div>\n" +
+    "                              </div>\n" +
+    "                          </div>\n" +
+    "                      </div>\n" +
+    "                  </div>\n" +
+    "              </div>";
+
+let cardAccept = "" +
+    " <div class=\"col-12 col-sm-10 col-md-7 col-xl-4\">\n" +
+    "                  <div class=\"d-flex row  p-2 grad_3 rounded-sm box-shadow-md\">\n" +
+    "                      <div class=\"d-flex col justify-content-between\">\n" +
+    "                          <div>\n" +
+    "                              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-x\" viewBox=\"0 0 16 16\">\n" +
+    "                                  <path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\"/>\n" +
+    "                              </svg>\n" +
+    "                          </div>\n" +
+    "                          <div>\n" +
+    "                              <div class=\"d-flex col\">\n" +
+    "                                  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"white\" class=\"bi bi-bell\" viewBox=\"0 0 16 16\">\n" +
+    "                                      <path d=\"M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z\"/>\n" +
+    "                                  </svg>\n" +
+    "                                  <div class=\"text-white ms-1\">Notification </div>\n" +
+    "                              </div>\n" +
+    "                          </div>\n" +
+    "                      </div>\n" +
+    "                      <div>\n" +
+    "                          <div class=\"d-flex row justify-content-around mt-2 gap-4\">\n" +
+    "                              <div class=\"d-flex col gap-4\">\n" +
+    "                                  <div>\n" +
+    "                                      <div class=\"font-weight-2\">Organisateur</div>\n" +
+    "                                      <div class=\"text-gray-600\">--title-- (--sport--) <br/> --city-- le --date--</div>\n" +
+    "                                  </div>\n" +
+    "                              </div>\n" +
+    "                              <div class=\"\">\n" +
+    "                                  <div class=\"d-flex col gap-4 mt-4 mb-3 mx-auto\">\n" +
+    "                                      <div class=\" box-shadow-md font-weight-2 bg-white py-2 px-3 rounded-sm\">\n" +
+    "                                          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-check\" viewBox=\"0 0 16 16\">\n" +
+    "                                              <path d=\"M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\"/>\n" +
+    "                                          </svg>\n" +
+    "                                          <span>À accepté votre réservation</span>\n" +
+    "                                      </div>\n" +
+    "                                  </div>\n" +
+    "                              </div>\n" +
+    "                          </div>\n" +
+    "                      </div>\n" +
+    "                  </div>\n" +
+    "              </div>"
+

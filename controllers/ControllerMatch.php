@@ -39,13 +39,10 @@ class ControllerMatch{
         }
 
         if(isset($rqRessource) && !isset($_GET['city']) && !isset($_GET['full']) && !isset($requestRessourceTwo)){
-
             $this->_get->getOneMatch($rqRessource);
-
         }
 
         if($requestRessourceTwo == "Player" && isset($rqRessource)){
-
            $this->_get->getAllPlayer($rqRessource);
         }
 
@@ -53,9 +50,7 @@ class ControllerMatch{
             $this->_get->getSortMatch($_GET['city'], $_GET['full'], $_GET['sport'], $_GET['period']);
         }
 
-
     }
-
 
     public function typePost($rqRessource)
     {
@@ -82,10 +77,15 @@ class ControllerMatch{
 
     }
 
-
     public function typePut($rqRessource)
     {
+
         $this->_put = new Put();
+        parse_str(file_get_contents('php://input'), $data);
+
+        if(isset($rqRessource) && !empty($data['score']) &&!empty($data['best'])) {
+            $this->_put->updateMatch($data['score'],$data['best'],$rqRessource);
+        }
 
     }
 
