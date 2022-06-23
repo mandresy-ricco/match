@@ -1,5 +1,16 @@
+// Creator : Alexandre GIROLT and Victor RICCO
+// Mail : alexandre.girolt@isen-ouest.yncrea.fr,victor.ricco@isen-ouest.yncrea.fr
+// Date end : 23/06/2022
+// Topic : match management site
+
+/**
+ * Writes the data information in the template ColumnTable
+ * @param element
+ * @returns {string}
+ */
 function replaceColumn(element){
 
+    // retrieve today's date
     let d = new Date();
     let date = d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate() + " "+d.getHours()+":"+ d.getMinutes()+":00" ;
 
@@ -10,6 +21,7 @@ function replaceColumn(element){
     card = card.replace("--date--", element.fin);
 
 
+    // chooses information to be included in the page according to the date
     if(date < element.debut){
 
         card = card.replace("--info--", "Prochainement");
@@ -30,7 +42,7 @@ function replaceColumn(element){
 
                 card = card.replace("--score-match--",
                     "<input class='shadow-none form-control border-0' id='--idMatchOne--' type='text' placeholder='Score...'>");
-                console.log(element.id_match)
+
                 card = card.replace("--idMatchOne--","score-field-"+element.id_match);
 
                 card = card.replace("--best-player--",
@@ -67,22 +79,29 @@ function replaceColumn(element){
 
 }
 
+
+/**
+ * Initialize the template and add the template to the html page
+ * @param data
+ */
 function createCard(data){
 
-    console.log(data)
-    if(data.length=== undefined)
+    let typePerson = $("#type-person option:selected" ).val();
+
+    if(data.length=== undefined )
         $('#number-match-field').text("0");
+    if (typePerson == 1)
+        $('#match-field-stat').attr('class', "d-none");
     else
         $('#number-match-field').text(data.length);
-    $('#statistic-field').removeClass("d-none" )
 
-
-
+    $('#statistic-field').removeClass("d-none" );
     $('#information').attr('class', "d-none");
 
     let table =  $('#table-historical-field');
     table.html('');
 
+    // manage the size of the array (empty,...)
     if(data === false)
     {
         $('#information').attr('class', "");
@@ -106,9 +125,17 @@ function createCard(data){
 
 }
 
+
+/**
+ * Writes the data information in the template notification two
+ * @param element
+ * @returns {string}
+ */
 function replaceCardNotificationTwo(element){
-    console.log(element);
+
     let card;
+
+    // choose the template according to the statut of the player
 
     if(element.statut === true)
     {
@@ -125,6 +152,12 @@ function replaceCardNotificationTwo(element){
     return card;
 }
 
+
+/**
+ * Writes the data information in the template notification one
+ * @param element
+ * @returns {string}
+ */
 function replaceCardNotificationOne(element){
 
     let card = CardAsk.replace("--nameOne--", element.prenom);
@@ -137,13 +170,19 @@ function replaceCardNotificationOne(element){
     return card;
 }
 
+
+/**
+ * Initializes or modifies the table of matches
+ * @param data
+ */
 function createCardNotification(data){
 
 
     let notif = $("#notification-field" )
     notif.html('');
 
-    if(data === false)
+    // manage the size of the array (empty,...)
+    if(data === false )
     {
         $("#informationTwo" ).attr('class','mt-4');
     }
@@ -177,16 +216,30 @@ function createCardNotification(data){
 
 }
 
+
+/**
+ * Event type change in order to send the request and process it
+ * (know the type of person (player...))
+ */
 $("#type-person").change(() => {
 
+    $('#match-field-stat').attr('class', "col-10  col-md-4 c" +
+        "ol-lg-3 col-xxl-2 grad_5 rounded-md box-shadow-md p-3");
     $("#informationTwo" ).attr('class','mt-4 d-none');
     let typePerson = $("#type-person option:selected" ).val();
 
+
+    // retrieve information related to the person
     ajaxRequest('GET', '../controllers/Rest.php/User/notification?type='+typePerson,createCardNotification);
     ajaxRequest('GET', '../controllers/Rest.php/User/historical?type='+typePerson,createCard);
 
 });
 
+
+/**
+ * Initialize/modify user profile information
+ * @param data
+ */
 function fillProfile(data){
     $('#img-fill').attr('src',data.chemin);
     $('#name-fill').text(data.prenom+' '+data.nom);
@@ -194,11 +247,18 @@ function fillProfile(data){
     $('#city-fill').text(data.ville);
 }
 
+
+/**
+ * modify match data (score, best player)
+ * @param id
+ */
 function modifyData(id){
     event.preventDefault()
     let score =$("#score-field-"+id).val()
     let best =$("#best-field-"+id).val()
     let typePerson = $("#type-person option:selected" ).val();
+
+    // modify the data then recover this data
     ajaxRequest('PUT', '../controllers/Rest.php/Match/'+id,(data) =>{
         ajaxRequest('GET', '../controllers/Rest.php/User/historical?type='+typePerson,createCard);
     },"score="+score + "&best="+best );
@@ -206,7 +266,13 @@ function modifyData(id){
 
 }
 
+
+/**
+ * Manages the organizer's requests (accept or refuse)
+ * @param id
+ */
 function manageReservation(id){
+
 
     let typePerson = $("#type-person option:selected" ).val();
     let data;
@@ -216,15 +282,18 @@ function manageReservation(id){
     else
         data = true
 
+    // Modify the status (accepted or not in a match) of the user then retrieve the new data
     ajaxRequest('PUT', '../controllers/Rest.php/Participation/'+information[1],() =>{
         ajaxRequest('GET', '../controllers/Rest.php/User/notification?type='+typePerson,createCardNotification);
 
     },"choice="+data);
 
-
-console.log(id)
 }
 
+
+/**
+ * Event type click in order to send the request and process it (edit profiles)
+ */
 $('#modify-profile').on('click',  ()  =>
     {
         event.preventDefault();
@@ -244,5 +313,8 @@ $('#modify-profile').on('click',  ()  =>
     }
 );
 
+/**
+ * Initialize user profile information
+ */
 ajaxRequest('GET', '../controllers/Rest.php/User',fillProfile);
 

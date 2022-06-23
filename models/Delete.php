@@ -1,6 +1,12 @@
 <?php
 require_once('DataBase.php');
 session_start();
-class Delete{
+
+/*
+ * class handling delete
+ */
+class Delete extends DataBase {
+
+
 
 }

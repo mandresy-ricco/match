@@ -1,3 +1,14 @@
+// Creator : Alexandre GIROLT and Victor RICCO
+// Mail : alexandre.girolt@isen-ouest.yncrea.fr,victor.ricco@isen-ouest.yncrea.fr
+// Date end : 23/06/2022
+// Topic : match management site
+
+/**
+ * Registers and return information
+ * the template with the replaced information
+ * @param element
+ * @returns {string}
+ */
 function cardReplace(element)
 {
     let card = card_template.replace("--sport--", element.denomination);
@@ -20,10 +31,15 @@ function cardReplace(element)
 }
 
 
+/**
+ * Initialize the template and add the template to the html page
+ * @param data
+ */
 function createCard(data)
 {
-    console.log(data);
     $('#all-card').html('');
+
+    // manage the size of the array (empty,...)
 
     if(data === false)
     {
@@ -49,24 +65,34 @@ function createCard(data)
 
 }
 
+
+/**
+ * Event type click in order to send the request and process it (search a match)
+ */
 $( "#search-field" ).on('click',  () =>
     {
         $('#information').attr('class', "d-none");
         $('#unless').attr('class', "col-3 mt-5 border border-3  d-none d-lg-block");
+
+        // prevent form submission
         event.preventDefault()
 
+
+        // get variable
         let city = $( "#city-field" ).val();
         let sport = $( "#sport-field option:selected" ).text();
         let period =  $( "#period-field option:selected" ).val();
         let full = $('input[name=full]').is(':checked');
 
 
-
+        // retrieve all matches sorted for display
         ajaxRequest('GET', '../controllers/Rest.php/Match'+'?period='+period+
             "&city="+city+"&full="+full+"&sport="+sport,createCard);
     }
 );
 
 
-
+/**
+ * retrieve all the matches in order to display them
+ */
 ajaxRequest('GET', '../controllers/Rest.php/Match',createCard)

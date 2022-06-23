@@ -1,3 +1,13 @@
+// Creator : Alexandre GIROLT and Victor RICCO
+// Mail : alexandre.girolt@isen-ouest.yncrea.fr,victor.ricco@isen-ouest.yncrea.fr
+// Date end : 23/06/2022
+// Topic : match management site
+
+/**
+ * Get id match from url
+ * @param idMatch
+ * @returns {string}
+ */
 function getParameter(idMatch)
 {
     let url = window.location.search.substring(1);
@@ -12,6 +22,13 @@ function getParameter(idMatch)
     }
 }
 
+
+/**
+ * Registers and returns information
+ * the template with the replaced information
+ * @param data
+ * @returns {string}
+ */
 function replaceInfo(data)
 {
 
@@ -27,12 +44,20 @@ function replaceInfo(data)
     let nameTwo = data.nom[0].toUpperCase() + data.nom.slice(1);
     infoDisplay = infoDisplay.replace("--nameOne--",nameOne);
     infoDisplay = infoDisplay.replace("--nameTwo--", nameTwo);
+
     return infoDisplay;
 }
 
+
+/**
+ * Registers and returns information
+ * the template with the replaced information
+ * @param data
+ * @returns {string}
+ */
 function replaceCardPlayer(data)
 {
-    console.log(data);
+
     let statut;
     if(data.statut === true)
         statut = "Inscrit"
@@ -50,9 +75,16 @@ function replaceCardPlayer(data)
     return infoDisplayPlayer;
 }
 
+
+/**
+ * Responsible for initializing information in the page
+ * @param data
+ */
 function pageInfoRetrieval(data)
 {
-    console.log(data);
+    // load maps
+    let address = data.adresse.replace(" ","+")+ "+" + data.ville ;
+    $('#maps-field').attr('src','https://maps.google.com/maps?q='+address+"&output=embed");
 
     let availability =  $('#availability-fill');
     if(data.nombre_joueur_max-data.count === 0){
@@ -78,6 +110,11 @@ function pageInfoRetrieval(data)
 
 }
 
+
+/**
+ * Responsible for initializing information in the page
+ * @param data
+ */
 function pagePlayerRetrieval(data)
 {
     let player = $('#player');
@@ -103,22 +140,36 @@ function pagePlayerRetrieval(data)
 
 }
 
+
+/**
+ * Main function
+ */
 function main(){
 
+    // retrieve match id from url
     let id = getParameter('id_match');
 
+    // retrieve match information
     ajaxRequest('GET', '../controllers/Rest.php/Match/'+id,pageInfoRetrieval);
+
+    // retrieve information on the players of the match
     ajaxRequest('GET', '../controllers/Rest.php/Match/'+id+'/Player',pagePlayerRetrieval);
 
 
 }main();
 
+/**
+ * Event type click in order to send the request and process it (reservation)
+ */
 $('#book-fill').on('click',  () =>
     {
+        // prevent form submission
         event.preventDefault();
 
+        // game booking
         ajaxRequest('POST', '../controllers/Rest.php/Match',
             () =>{
+            // url redirect
             window.location.href = "../html/search.html";
         },"id_match="+getParameter('id_match'));
 

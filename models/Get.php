@@ -2,29 +2,35 @@
 session_start();
 require_once('DataBase.php');
 
+/**
+ * class handling get
+ */
 class Get extends DataBase{
 
+    /** Retrieve all matches
+     * @return void
+     */
     public function getAllMatch(){
 
         $request = '
            select count(*), m.id_match,m.ville,
-               m.nombre_joueur_min,
-               m.nombre_joueur_max,
-               m.denomination titre,m.debut,
-               m.fin,m.id_match,
-               m.chemin_image,m.denomination,p2.nom,
-               p2.prenom,a.chemin,a.chemin,s.denomination
-            from match m
-             JOIN participation p on m.id_match = p.id_match
-             JOIN sport s on s.id_sport = m.id_sport
-             JOIN personne p2 on p2.id_personne = m.id_personne
-             JOIN avatar a on a.id_avatar = p2.id_avatar
-             where m.statut = false
-            group by  m.id_match,m.denomination,m.ville,
-              m.nombre_joueur_min,m.nombre_joueur_max,
-              m.denomination,m.debut,m.fin,m.id_match,
-              m.chemin_image,p2.nom,p2.prenom,m.denomination,
-              a.chemin,s.denomination;';
+        m.nombre_joueur_min,
+        m.nombre_joueur_max,
+        m.denomination titre,m.debut,
+        m.fin,m.id_match,
+        m.chemin_image,m.denomination,p2.nom,
+        p2.prenom,a.chemin,a.chemin,s.denomination
+        from match m
+         left JOIN participation p on m.id_match = p.id_match
+         JOIN sport s on s.id_sport = m.id_sport
+         JOIN personne p2 on p2.id_personne = m.id_personne
+         left JOIN avatar a on a.id_avatar = p2.id_avatar
+        where m.statut = false
+        group by  m.id_match,m.denomination,m.ville,
+          m.nombre_joueur_min,m.nombre_joueur_max,
+          m.denomination,m.debut,m.fin,m.id_match,
+          m.chemin_image,p2.nom,p2.prenom,m.denomination,
+          a.chemin,s.denomination;';
 
 
         $statement = $this->_bdd->prepare($request);
@@ -34,6 +40,11 @@ class Get extends DataBase{
         echo json_encode($result);
     }
 
+
+    /** Retrieve match information
+     * @param $id
+     * @return void
+     */
     public function getOneMatch($id)
     {
         $request = " 
@@ -45,11 +56,11 @@ class Get extends DataBase{
         m.adresse,s.denomination nom_s,m.description
         
         from match m
-         JOIN participation p on m.id_match = p.id_match
+         left JOIN participation p on m.id_match = p.id_match
          JOIN sport s on s.id_sport = m.id_sport
          JOIN personne p2 on p2.id_personne = m.id_personne
-         JOIN avatar a on a.id_avatar = p2.id_avatar
-        where p.id_match = :id 
+         left JOIN avatar a on a.id_avatar = p2.id_avatar
+        where m.id_match = :id 
         group by m.id_match,m.ville,
          m.nombre_joueur_min,
          m.nombre_joueur_max,
@@ -70,6 +81,14 @@ class Get extends DataBase{
 
     }
 
+
+    /** Retrieve sorted matches
+     * @param $city
+     * @param $full
+     * @param $sport
+     * @param $period
+     * @return void
+     */
     public function getSortMatch($city,$full,$sport,$period){
 
         $request = "
@@ -81,10 +100,10 @@ class Get extends DataBase{
                 m.chemin_image,m.denomination,p2.nom,
                 p2.prenom,a.chemin,a.chemin,s.denomination
                 from match m
-                JOIN participation p on m.id_match = p.id_match
+                LEFT JOIN participation p on m.id_match = p.id_match
                 JOIN sport s on s.id_sport = m.id_sport
                 JOIN personne p2 on p2.id_personne = m.id_personne
-                JOIN avatar a on a.id_avatar = p2.id_avatar
+                LEFT JOIN avatar a on a.id_avatar = p2.id_avatar
                 WHERE m.ville = :city
                 AND m.statut  = :statut
                 AND EXTRACT(days FROM  m.debut - now()) <= :period
@@ -106,6 +125,11 @@ class Get extends DataBase{
         echo json_encode($result);
     }
 
+
+    /** retrieve all player
+     * @param $id_match
+     * @return void
+     */
     public function getAllPlayer($id_match){
 
         $request = '
@@ -113,7 +137,7 @@ class Get extends DataBase{
         from participation p
         JOIN personne p2 on p2.id_personne = p.id_personne
         JOIN forme_sportive fs on fs.id_forme = p2.id_forme
-        JOIN avatar a on a.id_avatar = p2.id_avatar
+        left JOIN avatar a on a.id_avatar = p2.id_avatar
         JOIN match m on m.id_match = p.id_match
         where p.id_match = :id ;
          ';
@@ -129,6 +153,12 @@ class Get extends DataBase{
             echo json_encode($result);
     }
 
+
+    /** Manages the username verification login page
+     * @param $mail
+     * @param $password
+     * @return void
+     */
     public function checkLogin($mail, $password){
 
         $request = 'SELECT mdp,id_personne FROM personne WHERE mail = :mail';
@@ -151,6 +181,13 @@ class Get extends DataBase{
         }
     }
 
+
+    /** Manages the username verification register page
+     * @param $mail
+     * @param $passwordOne
+     * @param $passwordTwo
+     * @return void
+     */
     public function checkMail($mail,$passwordOne,$passwordTwo)
     {
         $request = 'SELECT id_personne FROM personne WHERE mail = :mail';
@@ -171,8 +208,14 @@ class Get extends DataBase{
 
     }
 
+
+    /** Retrieve match history (soon, finished..)
+     * @param $type
+     * @return void
+     */
     public function getHistorical($type){
 
+        // organizer
         if($type == 1){
             $request = '
               SELECT m.id_personne, m.denomination titre,m.debut,
@@ -185,6 +228,7 @@ class Get extends DataBase{
                 $statement = $this->_bdd->prepare($request);
                 $statement->bindParam(":id",$_SESSION['id_personne']);
         }
+
         elseif ($type == 2){
 
             $request = '
@@ -224,20 +268,27 @@ class Get extends DataBase{
 
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        for($i = 0 ; $i< count($result) ; $i++){
-            $result[$i][] = (int)$_SESSION['id_personne'];
-            $resultTwo[] = $result[$i];
+        if($result == null){
+            echo json_encode(false);
+        }else{
+            for($i = 0 ; $i< count($result) ; $i++){
+                $result[$i][] = (int)$_SESSION['id_personne'];
+            }
+            echo json_encode($result);
         }
 
-        echo json_encode($resultTwo);
+
     }
 
-    public function getNotification($type){
 
+    /** Responsible for retrieving notifications
+     * @param $type
+     * @return void
+     */
+    public function getNotification($type){
 
         if($type != 3) {
             if ($type == 1) {
-
                 $request = '
                 select p2.prenom, p2.nom,m.ville,
                        m.debut,a.chemin,m.id_match,
@@ -269,25 +320,34 @@ class Get extends DataBase{
             }
 
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            for($i = 0 ; $i< count($result) ; $i++){
-                $result[$i][] = (int) $type;
-                $resultTwo[] = $result[$i];
+
+            if(empty($result)){
+                echo json_encode(false);
+            }else{
+                for($i = 0 ; $i< count($result) ; $i++){
+                    $result[$i][] = (int) $type;
+                }
+                echo json_encode($result);
             }
-            echo json_encode($result);
+
         }else
             echo json_encode(false);
 
 
     }
 
+
+    /** Retrieve information about a person
+     * @return void
+     */
     public function getOnePlayer(){
+
         $request = '
-        select nom,prenom,fs.denomination fs,a.chemin,p2.ville
-        from participation p
-        JOIN personne p2 on p2.id_personne = p.id_personne
-        LEFT JOIN forme_sportive fs on fs.id_forme = p2.id_forme
-        JOIN avatar a on a.id_avatar = p2.id_avatar
-        where p.id_personne = :id
+        select *
+        from personne
+        JOIN avatar a on a.id_avatar = personne.id_avatar
+        LEFT JOIN forme_sportive fs on fs.id_forme = personne.id_forme
+        WHERE id_personne = :id ;
          ';
 
         $statement = $this->_bdd->prepare($request);

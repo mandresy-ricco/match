@@ -6,7 +6,7 @@ require_once('../models/Delete.php');
 require_once('../models/Post.php');
 
 /**
- *  Match user class
+ *  User management class
  */
 class ControllerUser{
 
@@ -15,6 +15,11 @@ class ControllerUser{
     private $_put;
     private $_delete;
 
+    /** Calls the corresponding method according to the type of the resource
+     * @param $rqMethod
+     * @param $rqRessource
+     * @param $rqRessourceTwo
+     */
     function __construct($rqMethod,$rqRessource= null,$rqRessourceTwo=null)
     {
         switch ($rqMethod) {
@@ -33,11 +38,19 @@ class ControllerUser{
         }
     }
 
+
+    /** Method dealing with the get resource
+     * @param $rqRessource
+     * @param $rqRessourceTwo
+     * @return void
+     */
     public function typeGet($rqRessource,$rqRessourceTwo)
     {
+
         $this->_get = new Get();
 
         if(!isset($rqRessource) && !isset($rqRessourceTwo)){
+
             $this->_get->getOnePlayer();
         }
 
@@ -55,6 +68,10 @@ class ControllerUser{
     }
 
 
+    /** Method dealing with the post resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typePost($rqRessource)
     {
         $this->_post = new Post();
@@ -75,6 +92,10 @@ class ControllerUser{
     }
 
 
+    /** Method dealing with the put resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typePut($rqRessource)
     {
 
@@ -90,6 +111,10 @@ class ControllerUser{
     }
 
 
+    /** Method dealing with the delete resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typeDelete($rqRessource)
     {
         $this->_delete = new Delete();

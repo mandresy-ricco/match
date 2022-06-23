@@ -2,9 +2,17 @@
 require_once('DataBase.php');
 session_start();
 
+
+/**
+ * class handling post
+ */
 class Post extends DataBase
 {
 
+    /** create a user (registration page)
+     * @param $data
+     * @return void
+     */
     public function createUser($data)
     {
         $request = "INSERT INTO personne (prenom, nom,mail,mdp,ville,id_avatar) VALUES (?,?,?,?,?,?)";
@@ -23,6 +31,11 @@ class Post extends DataBase
         echo json_encode(1);
     }
 
+
+    /** create a user (organize page)
+     * @param $data
+     * @return void
+     */
     public function createMatch($data)
     {
 
@@ -46,6 +59,11 @@ class Post extends DataBase
         echo json_encode(1);
     }
 
+
+    /** create a reservation (match page)
+     * @param $id_match
+     * @return void
+     */
     function createReservation($id_match){
         // false si c le client qui fais la demande
         $request = "INSERT INTO participation (demandeur, id_match, id_personne) VALUES (?,?,?)";

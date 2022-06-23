@@ -1,3 +1,8 @@
+// Creator : Alexandre GIROLT and Victor RICCO
+// Mail : alexandre.girolt@isen-ouest.yncrea.fr,victor.ricco@isen-ouest.yncrea.fr
+// Date end : 23/06/2022
+// Topic : match management site
+
 let card_template = "<div class=\"ms-5  mt-4 \">\n" +
     "                <div class=\"row mt-sm-5 bg-white  rounded box-shadow-md\">\n" +
     "                <div class=\" col-4 mt-3 my-xl-auto \" >\n" +

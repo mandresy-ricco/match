@@ -2,9 +2,18 @@
 require_once('DataBase.php');
 session_start();
 
+/**
+ *  class handling post
+ */
 class Put extends DataBase{
 
 
+    /** Update the game
+     * @param $score
+     * @param $best
+     * @param $id
+     * @return void
+     */
     public function updateMatch ($score,$best,$id){
 
         $request = 'UPDATE match set meilleur_joueur = :best,score = :score  WHERE id_match = :id_match';
@@ -17,6 +26,12 @@ class Put extends DataBase{
         echo json_encode(1);
     }
 
+
+    /** Changed the status (accepted, denied) of the user in a match
+     * @param $choice
+     * @param $rqRessource
+     * @return void
+     */
     public function updateParticipation ($choice,$rqRessource){
         $request = 'UPDATE participation set statut = :choice  WHERE id_reservation = :id_r';
         $statement = $this->_bdd->prepare($request);
@@ -27,6 +42,11 @@ class Put extends DataBase{
         echo json_encode(1);
     }
 
+
+    /** Change profile (age...)
+     * @param $data
+     * @return void
+     */
     public function modifyProfile($data){
         if (!empty($data[0])){
             $request = 'UPDATE personne set age = :age WHERE id_personne = :id_personne';
