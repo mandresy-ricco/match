@@ -1,3 +1,8 @@
+<!-- Creator : Alexandre GIROLT and Victor RICCO -->
+<!-- Mail : alexandre.girolt@isen-ouest.yncrea.fr,victor.ricco@isen-ouest.yncrea.fr -->
+<!-- Date end : 23/06/2022  -->
+<!-- Topic : match management site -->
+
 <?php
 session_start();
 require_once('../models/Get.php');
@@ -5,6 +10,9 @@ require_once('../models/Put.php');
 require_once('../models/Delete.php');
 require_once('../models/Post.php');
 
+/**
+ * Match management class
+ */
 class ControllerMatch{
 
     private $_get;
@@ -12,7 +20,13 @@ class ControllerMatch{
     private $_put;
     private $_delete;
 
+    /** Calls the corresponding method according to the type of the resource
+     * @param $rqMethod
+     * @param $rqRessource
+     * @param $requestRessourceTwo
+     */
     function __construct($rqMethod,$rqRessource=null,$requestRessourceTwo=null)
+
     {
         switch ($rqMethod) {
             case "GET":
@@ -30,6 +44,11 @@ class ControllerMatch{
         }
     }
 
+    /** Method dealing with the get resource
+     * @param $rqRessource
+     * @param $requestRessourceTwo
+     * @return void
+     */
     public function typeGet($rqRessource,$requestRessourceTwo)
     {
         $this->_get = new Get();
@@ -52,6 +71,10 @@ class ControllerMatch{
 
     }
 
+    /** Method dealing with the post resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typePost($rqRessource)
     {
         $this->_post = new Post();
@@ -77,6 +100,11 @@ class ControllerMatch{
 
     }
 
+
+    /** Method dealing with the put resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typePut($rqRessource)
     {
 
@@ -90,6 +118,10 @@ class ControllerMatch{
     }
 
 
+    /** Method dealing with the delete resource
+     * @param $rqRessource
+     * @return void
+     */
     public function typeDelete($rqRessource)
     {
         $this->_delete = new Delete();

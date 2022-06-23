@@ -5,6 +5,9 @@ require_once('../models/Put.php');
 require_once('../models/Delete.php');
 require_once('../models/Post.php');
 
+/**
+ *  Match user class
+ */
 class ControllerUser{
 
     private $_get;
@@ -74,7 +77,15 @@ class ControllerUser{
 
     public function typePut($rqRessource)
     {
+
         $this->_put = new Put();
+        parse_str(file_get_contents('php://input'), $data);
+
+        if(isset($data['age']) || isset($data['city']) || isset($data['newPassword']) || isset($data['grade'])) {
+            $this->_put->modifyProfile(
+                array($data['age'], $data['city'], $data['newPassword'], $data['grade'])
+            );
+        }
 
     }
 

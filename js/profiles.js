@@ -132,8 +132,8 @@ function replaceCardNotificationOne(element){
     card = card.replace("--city--", element.ville);
     card = card.replace("--date--", element.debut);
     card = card.replace("--link--", element.chemin);
-    card = card.replace("--id-accept--","id-accept-"+ element.resa);
-    card = card.replace("--id-deny--","id-deny-"+ element.resa);
+    card = card.replace("--id-accept--","accept-"+element.resa);
+    card = card.replace("--id-deny--","deny-"+element.resa);
     return card;
 }
 
@@ -187,14 +187,12 @@ $("#type-person").change(() => {
 
 });
 
-ajaxRequest('GET', '../controllers/Rest.php/User',(data) =>{
-
+function fillProfile(data){
     $('#img-fill').attr('src',data.chemin);
     $('#name-fill').text(data.prenom+' '+data.nom);
     $('#fs-fill').text('Forme : '+data.fs);
     $('#city-fill').text(data.ville);
-});
-
+}
 
 function modifyData(id){
     event.preventDefault()
@@ -208,7 +206,43 @@ function modifyData(id){
 
 }
 
+function manageReservation(id){
+
+    let typePerson = $("#type-person option:selected" ).val();
+    let data;
+    let information = id.split('-');
+    if(information[0] === "deny")
+        data = false
+    else
+        data = true
+
+    ajaxRequest('PUT', '../controllers/Rest.php/Participation/'+information[1],() =>{
+        ajaxRequest('GET', '../controllers/Rest.php/User/notification?type='+typePerson,createCardNotification);
+
+    },"choice="+data);
 
 
+console.log(id)
+}
 
+$('#modify-profile').on('click',  ()  =>
+    {
+        event.preventDefault();
+        let age = $( "#old-field" ).val();
+        let city = $( "#city-field" ).val();
+        let newPassword = $( "#password-field" ).val();
+        let grade = $( "#grade-field" ).val();
+
+        let array = {age, city, newPassword, grade};
+
+        ajaxRequest('PUT', '../controllers/Rest.php/User', () => {
+
+                ajaxRequest('GET', '../controllers/Rest.php/User',fillProfile);
+            },
+            "age="+age+"&city="+city
+            + "&newPassword="+newPassword+"&grade="+grade);
+    }
+);
+
+ajaxRequest('GET', '../controllers/Rest.php/User',fillProfile);
 

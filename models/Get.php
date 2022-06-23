@@ -248,9 +248,10 @@ class Get extends DataBase{
                 JOIN personne p2 on p2.id_personne = p.id_personne
                 JOIN avatar a on a.id_avatar = p2.id_avatar
             
-                where m.id_personne = :id and p.statut is null;';
+                where m.id_personne = :id and p.statut is null and p.id_personne != :idTwo;';
                 $statement = $this->_bdd->prepare($request);
                 $statement->bindParam(':id', $_SESSION['id_personne'], PDO::PARAM_INT);
+                $statement->bindParam(':idTwo', $_SESSION['id_personne'], PDO::PARAM_INT);
                 $statement->execute();
 
             } else if ($type == 2) {
