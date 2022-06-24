@@ -133,12 +133,13 @@ class Get extends DataBase{
     public function getAllPlayer($id_match){
 
         $request = '
-        select nom,prenom,fs.denomination fs,p.statut stat,a.chemin
+        select count(*), nom,prenom,fs.denomination fs,p.statut stat,a.chemin
         from participation p
                  JOIN personne p2 on p2.id_personne = p.id_personne
         join avatar a on a.id_avatar = p2.id_avatar
         left join forme_sportive fs on fs.id_forme = p2.id_forme
-        where p.id_match = :id ;
+        where p.id_match = :id 
+        group by nom,prenom,fs.denomination,p.statut ,a.chemin ;
          ';
 
         $statement = $this->_bdd->prepare($request);
