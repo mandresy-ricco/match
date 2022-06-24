@@ -59,9 +59,10 @@ function replaceCardPlayer(data)
 {
 
     let statut;
-    if(data.statut === true)
+    console.log(data)
+    if(data.stat === true)
         statut = "Inscrit"
-    else if (data.statut === undefined)
+    else if (data.stat === undefined || data.stat === null)
         statut = "Non inscrit"
 
     let nameOne = data.prenom[0].toUpperCase() +data.prenom.slice(1);

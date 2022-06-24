@@ -66,7 +66,7 @@ let card_template = "<div class=\"ms-5  mt-4 \">\n" +
     "            </div>";
 
 
-let infoMatch = "<div class=\"row blur box-shadow-sm\">\n" +
+let infoMatch = "<div style=\"backdrop-filter: blur('40px')\" class=\"row blur box-shadow-sm\">\n" +
     "        <div class=\"col-2 col-lg-4\"></div>\n" +
     "        <div class=\"col\">\n" +
     "            <div class=\"d-flex row py-4 \">\n" +
