@@ -13,7 +13,7 @@ class Get extends DataBase{
     public function getAllMatch(){
 
         $request = '
-           select count(*), m.id_match,m.ville,
+           select count(*)-1 count, m.id_match,m.ville,
         m.nombre_joueur_min,
         m.nombre_joueur_max,
         m.denomination titre,m.debut,
@@ -48,7 +48,7 @@ class Get extends DataBase{
     public function getOneMatch($id)
     {
         $request = " 
-       select count(*),  m.id_match,m.ville,
+       select count(*) ,  m.id_match,m.ville,
         m.nombre_joueur_min,m.nombre_joueur_max,
         m.denomination titre,m.debut, m.prix,
         m.fin,m.chemin_image,m.denomination,p2.nom,
@@ -92,7 +92,7 @@ class Get extends DataBase{
     public function getSortMatch($city,$full,$sport,$period){
 
         $request = "
-                select count(*), m.id_match,m.ville,
+                select count(*)-1 count, m.id_match,m.ville,
                 m.nombre_joueur_min,
                 m.nombre_joueur_max,
                 m.denomination titre,m.debut,
@@ -135,10 +135,9 @@ class Get extends DataBase{
         $request = '
         select nom,prenom,fs.denomination fs,p.statut stat,a.chemin
         from participation p
-        JOIN personne p2 on p2.id_personne = p.id_personne
-        JOIN forme_sportive fs on fs.id_forme = p2.id_forme
-        left JOIN avatar a on a.id_avatar = p2.id_avatar
-        JOIN match m on m.id_match = p.id_match
+                 JOIN personne p2 on p2.id_personne = p.id_personne
+        join avatar a on a.id_avatar = p2.id_avatar
+        left join forme_sportive fs on fs.id_forme = p2.id_forme
         where p.id_match = :id ;
          ';
 
