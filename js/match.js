@@ -83,6 +83,7 @@ function replaceCardPlayer(data)
  */
 function pageInfoRetrieval(data)
 {
+    $('#available-space-fill').text(data.nombre_joueur_max);
     // load maps
     let address = data.adresse.replace(" ","+")+ "+" + data.ville ;
     $('#maps-field').attr('src','https://maps.google.com/maps?q='+address+"&output=embed");
@@ -99,8 +100,7 @@ function pageInfoRetrieval(data)
         availability.attr('class', "text-white bg-green-500 mt-2 py-2 px-3 h-75 rounded");
     }
 
-    $('#number-player-fill').text(data.count);
-    $('#available-space-fill').text(data.nombre_joueur_max-data.count);
+
     $('#date-fill').text(data.debut+' → '+data.fin);
     $('#sport-and-city-fill').text("Match de "+data.nom_s+" à "+data.ville);
 
@@ -119,6 +119,15 @@ function pageInfoRetrieval(data)
  */
 function pagePlayerRetrieval(data)
 {
+
+    if(data.length === null || data.length === undefined ){
+        $('#number-player-fill').text("0");
+
+    }else{
+        $('#number-player-fill').text(data.length);
+    }
+
+
     let player = $('#player');
     player.html('');
 

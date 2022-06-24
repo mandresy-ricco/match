@@ -60,7 +60,7 @@ class Get extends DataBase{
          JOIN sport s on s.id_sport = m.id_sport
          JOIN personne p2 on p2.id_personne = m.id_personne
          left JOIN avatar a on a.id_avatar = p2.id_avatar
-        where m.id_match = :id and p.id_reservation is not null
+        where m.id_match = :id 
         group by m.id_match,m.ville,
          m.nombre_joueur_min,
          m.nombre_joueur_max,
