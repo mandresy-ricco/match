@@ -49,18 +49,18 @@ class Get extends DataBase{
     {
         $request = " 
        select count(*) ,  m.id_match,m.ville,
-        m.nombre_joueur_min,m.nombre_joueur_max,
-        m.denomination titre,m.debut, m.prix,
-        m.fin,m.chemin_image,m.denomination,p2.nom,
-        p2.prenom,a.chemin,a.chemin,s.denomination,
-        m.adresse,s.denomination nom_s,m.description
-        
+       m.nombre_joueur_min,m.nombre_joueur_max,
+       m.denomination titre,m.debut, m.prix,
+       m.fin,m.chemin_image,m.denomination,p2.nom,
+       p2.prenom,a.chemin,a.chemin,s.denomination,
+       m.adresse,s.denomination nom_s,m.description
+
         from match m
          left JOIN participation p on m.id_match = p.id_match
          JOIN sport s on s.id_sport = m.id_sport
          JOIN personne p2 on p2.id_personne = m.id_personne
          left JOIN avatar a on a.id_avatar = p2.id_avatar
-        where m.id_match = :id 
+        where m.id_match = :id and p.id_reservation is not null
         group by m.id_match,m.ville,
          m.nombre_joueur_min,
          m.nombre_joueur_max,

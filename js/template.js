@@ -32,7 +32,6 @@ let card_template = "<div class=\"ms-5  mt-4 \">\n" +
     "                                    </svg>\n" +
     "                                </div>\n" +
     "                                <div class=\"\">X--max--</div>\n" +
-    "                                <div class=\"bg-principal rounded-sm text-white font-size-2 ms-2 mt-1\">--count--/--maxTwo--</div>\n" +
     "\n" +
     "                            </div>\n" +
     "\n" +

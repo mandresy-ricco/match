@@ -99,10 +99,11 @@ function pageInfoRetrieval(data)
         availability.attr('class', "text-white bg-green-500 mt-2 py-2 px-3 h-75 rounded");
     }
 
-    $('#date-fill').text(data.debut+' → '+data.fin);
-    $('#sport-and-city-fill').text("Match de "+data.nom_s+" à "+data.ville);
     $('#number-player-fill').text(data.count);
     $('#available-space-fill').text(data.nombre_joueur_max-data.count);
+    $('#date-fill').text(data.debut+' → '+data.fin);
+    $('#sport-and-city-fill').text("Match de "+data.nom_s+" à "+data.ville);
+
     $('#description-fill').text(data.description);
     $('#book-fill').text("Réserver ("+data.prix + "€)");
 

@@ -21,7 +21,7 @@ function cardReplace(element)
     card = card.replace("--link--", element.chemin_image);
     card = card.replace("--linkTwo--", element.chemin);
     card = card.replace("--title--", element.titre);
-    card = card.replace("--count--", element.count);
+
 
     let nameOne = element.prenom[0].toUpperCase() + element.prenom.slice(1);
     let nameTwo = element.nom[0].toUpperCase() + element.nom.slice(1);
